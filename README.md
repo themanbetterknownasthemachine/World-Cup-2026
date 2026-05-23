@@ -26,15 +26,23 @@ Pipeline bleibt identisch.
 wm2026/
 ├── README.md                              # diese Datei
 ├── requirements.txt                       # Python-Abhaengigkeiten
+├── forecast.yml                           # GitHub-Actions-Workflow (gehoert nach .github/workflows/)
 ├── .gitignore
 ├── data/                                  # Rohdaten (nicht im Git, s. .gitignore)
 │   └── results.csv                        # wird beim ersten Lauf automatisch gecached
 ├── docs/
 │   └── methodik.md                        # Theorie: Poisson, Dixon-Coles, RPS, Monte Carlo
-└── notebooks/
-    ├── 01_dixon_coles_baseline.ipynb      # Phase 1: Baseline-Modell + WM-2022-Backtest
-    ├── 02_monte_carlo_simulation.ipynb    # Phase 2: 48-Team-Turnier-Simulation
-    └── 03_elo_model.ipynb                 # Phase 4: Elo-Engine als Ebene-A-Upgrade
+├── notebooks/
+│   ├── 01_dixon_coles_baseline.ipynb      # Phase 1: Baseline-Modell + WM-2022-Backtest
+│   ├── 02_monte_carlo_simulation.ipynb    # Phase 2: 48-Team-Turnier-Simulation
+│   ├── 03_elo_model.ipynb                 # Phase 4: Elo-Engine als Ebene-A-Upgrade
+│   └── 04_live_update.ipynb               # Phase 3: Live-Schicht (Trockentest + Erklaerung)
+├── src/                                   # geteilte Kernlogik (Notebook + Automatik)
+│   ├── wm_model.py                        # Elo + Tor-Modell + Gruppen + Simulation
+│   └── live_forecast.py                   # Headless-Skript fuer die taegliche Automatik
+└── output/                                # generierte Prognose (von der Automatik gepflegt)
+    ├── forecast.json                      # maschinenlesbar
+    └── forecast.md                        # Tabelle fuer Menschen
 ```
 
 ## Setup (conda)
@@ -64,11 +72,32 @@ beim ersten Lauf automatisch vom oeffentlichen GitHub-Mirror des Kaggle-Datensat
 ab dann wird lokal geladen, ohne Netz. Bei Verbindungsproblemen retryt der Loader
 bis zu 3-mal. Du kannst `results.csv` auch manuell nach `data/` legen.
 
+## Live-Prognose & Automatik
+
+Waehrend des Turniers wird die Prognose taeglich aktualisiert: gespielte
+WM-Resultate von **TheSportsDB** fliessen in die Elo-Wertung ein, gespielte Partien
+werden in der Simulation fixiert, der Rest neu durchgewuerfelt.
+
+Manuell starten:
+
+```powershell
+$env:SPORTSDB_KEY = "3"          # "3" = kostenloser Test-Key
+python src/live_forecast.py      # schreibt output/forecast.{json,md}
+```
+
+Automatisch: `forecast.yml` ist ein **GitHub-Actions-Workflow**, der das Skript
+taeglich um 06:00 UTC laufen laesst und das Ergebnis zurueck ins Repo committet.
+Damit Actions den Workflow findet, muss die Datei nach `.github/workflows/forecast.yml`
+verschoben werden. API-Key in den Repo-Settings als Secret `SPORTSDB_KEY` hinterlegen.
+
+Notebook 04 ist der interaktive Trockentest derselben Logik — beide nutzen
+`src/wm_model.py` als geteilte Engine.
+
 ## Roadmap
 
 - [x] **Phase 1** — Dixon-Coles-Baseline, Backtest auf WM 2022 ([01_dixon_coles_baseline.ipynb](notebooks/01_dixon_coles_baseline.ipynb))
 - [x] **Phase 2** — Monte-Carlo-Simulator fuer das 48-Team-Format der WM 2026 ([02_monte_carlo_simulation.ipynb](notebooks/02_monte_carlo_simulation.ipynb))
 - [x] **Phase 4** — Ebene-A-Upgrade auf Elo-Engine, +4.4% RPS-Verbesserung gegenueber DC-Baseline ([03_elo_model.ipynb](notebooks/03_elo_model.ipynb))
+- [x] **Phase 3** — TheSportsDB-Live-Schicht, taegliche Re-Simulation via GitHub Actions ([04_live_update.ipynb](notebooks/04_live_update.ipynb), [src/](src/), [output/](output/))
 - [ ] **Phase 2b** — offizielles FIFA-Bracket statt Finish-Seeding (inkl. Zuordnungstabelle der 8 besten Gruppendritten)
-- [ ] **Phase 3** — TheSportsDB-Live-Schicht (Spielplan + laufende Resultate, taegliche Re-Simulation)
 - [ ] **Phase 5** — LightGBM mit Zusatz-Features (Ruhetage, Reisedistanz, Kaderwert), erneut per RPS gegen Elo messen
