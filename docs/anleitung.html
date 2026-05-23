@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WM 2026 Prognose-Modell — Bau-Anleitung</title>
+  <style>
+    :root {
+      --ink: #18181b;
+      --ink-soft: #3f3f46;
+      --muted: #71717a;
+      --line: #e4e4e7;
+      --line-soft: #f4f4f5;
+      --bg: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --code-bg: #f8fafc;
+      --code-border: #e2e8f0;
+      --warn: #ca8a04;
+    }
+    @page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+    * { box-sizing: border-box; }
+    html { font-size: 10.5pt; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 12px; }
+
+    /* Cover */
+    .cover {
+      page-break-after: always;
+      min-height: 95vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 24mm;
+      padding-bottom: 10mm;
+    }
+    .cover .eyebrow {
+      font-size: 11pt;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 16mm;
+    }
+    .cover h1 {
+      font-size: 36pt;
+      line-height: 1.05;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 8mm;
+      max-width: 16cm;
+    }
+    .cover .lede {
+      font-size: 13pt;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      max-width: 14cm;
+      margin: 0;
+    }
+    .cover .meta {
+      border-top: 1px solid var(--line);
+      padding-top: 6mm;
+      font-size: 9pt;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* TOC */
+    .toc {
+      page-break-after: always;
+      padding-top: 8mm;
+    }
+    .toc h2 {
+      font-size: 18pt;
+      letter-spacing: -0.01em;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 4mm;
+      margin: 0 0 8mm;
+    }
+    .toc ol { list-style: none; padding: 0; counter-reset: toc; }
+    .toc ol li {
+      counter-increment: toc;
+      display: flex;
+      align-items: baseline;
+      padding: 5px 0;
+      border-bottom: 1px dotted var(--line);
+      font-size: 11pt;
+    }
+    .toc ol li::before {
+      content: counter(toc, decimal-leading-zero);
+      color: var(--accent);
+      font-weight: 600;
+      width: 36px;
+      flex-shrink: 0;
+      font-variant-numeric: tabular-nums;
+    }
+    .toc ol li .leader { flex: 1; border-bottom: 1px dotted var(--line); margin: 0 6px 4px; }
+    .toc ol li .page { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+    /* Sections */
+    section { page-break-before: always; padding-top: 4mm; }
+    section .phase-tag {
+      display: inline-block;
+      font-size: 8.5pt;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      padding: 3px 9px;
+      background: var(--accent-soft);
+      border-radius: 3px;
+      margin-bottom: 8px;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      page-break-after: avoid;
+    }
+    h2 { font-size: 22pt; margin: 0 0 4mm; line-height: 1.15; }
+    h3 { font-size: 14pt; margin: 9mm 0 3mm; }
+    h4 { font-size: 11pt; margin: 6mm 0 2mm; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+    p { margin: 0 0 4mm; }
+    p, li { color: var(--ink-soft); }
+    strong { color: var(--ink); font-weight: 600; }
+    em { color: var(--ink); font-style: italic; }
+
+    /* Lead paragraph after each section header */
+    .lede {
+      font-size: 12pt;
+      color: var(--ink-soft);
+      margin-bottom: 7mm;
+      line-height: 1.55;
+    }
+
+    /* Code */
+    code {
+      font-family: 'JetBrains Mono', 'Consolas', 'Liberation Mono', monospace;
+      font-size: 9.2pt;
+      background: var(--code-bg);
+      padding: 1px 5px;
+      border-radius: 3px;
+      color: var(--ink);
+    }
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--code-border);
+      border-radius: 4px;
+      padding: 10px 14px;
+      overflow: hidden;
+      font-size: 8.8pt;
+      line-height: 1.5;
+      margin: 4mm 0;
+      page-break-inside: avoid;
+      white-space: pre-wrap;
+    }
+    pre code { background: transparent; padding: 0; font-size: inherit; }
+    .filepath {
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 9pt;
+      color: var(--accent);
+      background: transparent;
+      padding: 0;
+      font-weight: 600;
+    }
+
+    /* Callouts */
+    .callout {
+      border-left: 3px solid var(--accent);
+      background: var(--accent-soft);
+      padding: 10px 14px;
+      border-radius: 0 4px 4px 0;
+      margin: 5mm 0;
+      font-size: 10pt;
+      page-break-inside: avoid;
+    }
+    .callout.warn {
+      border-color: var(--warn);
+      background: #fef9c3;
+    }
+    .callout .label {
+      font-weight: 700;
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .callout.warn .label { color: var(--warn); }
+    .callout p:last-child { margin-bottom: 0; }
+
+    /* Math block */
+    .formula {
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      background: var(--code-bg);
+      border: 1px solid var(--code-border);
+      border-radius: 4px;
+      padding: 14px 16px;
+      margin: 4mm 0;
+      text-align: center;
+      font-size: 11pt;
+      color: var(--ink);
+      page-break-inside: avoid;
+    }
+    .formula .where { display: block; font-size: 9pt; color: var(--muted); margin-top: 6px; font-family: inherit; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; margin: 4mm 0; font-size: 9.8pt; page-break-inside: avoid; }
+    th, td { padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-weight: 600; font-size: 9pt; color: var(--ink); border-bottom: 2px solid var(--ink); text-transform: uppercase; letter-spacing: 0.04em; }
+    tbody tr:nth-child(even) { background: var(--line-soft); }
+    td code { font-size: 8.6pt; }
+
+    /* Lists */
+    ul, ol { padding-left: 22px; margin: 0 0 4mm; }
+    li { margin-bottom: 3px; }
+    ul.steps { list-style: none; padding-left: 0; counter-reset: step; }
+    ul.steps li {
+      counter-increment: step;
+      padding-left: 38px;
+      position: relative;
+      margin-bottom: 5mm;
+    }
+    ul.steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 26px;
+      height: 26px;
+      background: var(--ink);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 11pt;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ASCII diagram */
+    .diagram {
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      background: var(--code-bg);
+      border: 1px solid var(--code-border);
+      border-radius: 4px;
+      padding: 14px;
+      font-size: 8.2pt;
+      line-height: 1.4;
+      white-space: pre;
+      margin: 4mm 0;
+      page-break-inside: avoid;
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* Two columns when space allows (architecture etc.) */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+      margin: 4mm 0;
+    }
+
+    /* Print niceties */
+    @media print {
+      a { color: inherit; text-decoration: none; }
+      .no-print { display: none; }
+    }
+    a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<div class="wrap cover">
+  <div>
+    <div class="eyebrow">Bau-Anleitung &middot; Stand 2026</div>
+    <h1>WM 2026 Prognose&shy;modell</h1>
+    <p class="lede">Wie aus 150 Jahren Fussball&shy;daten, ein paar Python-Notebooks, einem statistischen Modell und einer täglichen GitHub-Automatik ein Live-Dashboard wird, das jeden Morgen frische Titel-Wahrscheinlichkeiten für alle 48 Teams ausgibt.</p>
+  </div>
+  <div class="meta">
+    <span>End-to-End-Doku &middot; Python &middot; GitHub Actions &middot; TheSportsDB</span>
+    <span>github.com/themanbetterknownasthemachine/World-Cup-2026</span>
+  </div>
+</div>
+
+<!-- ============ TOC ============ -->
+<div class="wrap toc">
+  <h2>Inhalt</h2>
+  <ol>
+    <li><span>Was das Projekt macht und warum</span><span class="leader"></span><span class="page">3</span></li>
+    <li><span>Architektur im Überblick</span><span class="leader"></span><span class="page">4</span></li>
+    <li><span>Phase 1 — Tor-Modell mit Dixon-Coles</span><span class="leader"></span><span class="page">5</span></li>
+    <li><span>Phase 2 — Monte-Carlo-Simulation des Turniers</span><span class="leader"></span><span class="page">7</span></li>
+    <li><span>Phase 3 — Elo-Engine als Modell-Upgrade</span><span class="leader"></span><span class="page">9</span></li>
+    <li><span>Phase 4 — Live-Schicht mit TheSportsDB</span><span class="leader"></span><span class="page">11</span></li>
+    <li><span>Phase 5 — Pro-Spiel-Prognose (1/X/2)</span><span class="leader"></span><span class="page">13</span></li>
+    <li><span>Phase 6 — Automatik via GitHub Actions</span><span class="leader"></span><span class="page">14</span></li>
+    <li><span>Phase 7 — Dashboard auf GitHub Pages</span><span class="leader"></span><span class="page">16</span></li>
+    <li><span>Reproduktion — bau es selbst nach</span><span class="leader"></span><span class="page">17</span></li>
+    <li><span>Datei-Referenz</span><span class="leader"></span><span class="page">19</span></li>
+  </ol>
+</div>
+
+<!-- ============ 01 — Was und Warum ============ -->
+<section class="wrap">
+  <span class="phase-tag">Kapitel 01</span>
+  <h2>Was das Projekt macht — und warum so</h2>
+  <p class="lede">Wer wird Weltmeister? Exakt sagen lässt sich das nicht. Aber man kann <strong>Wahrscheinlichkeiten</strong> schätzen — und die jeden Tag mit den frischen Resultaten neu rechnen.</p>
+
+  <p>Fussball ist ein Sport, in dem auch starke Mannschaften regelmässig verlieren. Eine Punkt-Prognose wie "Argentinien wird Weltmeister" ist deshalb nur in einem von ungefähr sieben Universen richtig. Sinnvoller ist ein <strong>Verteilungs-Modell</strong>: Argentinien hat 14&nbsp;%, Spanien 11&nbsp;%, Frankreich 10&nbsp;% — und so weiter über alle 48 Teams. Diese Verteilung ist das, was das Projekt jeden Morgen ausgibt.</p>
+
+  <p>Das Modell arbeitet auf drei Ebenen, die aufeinander aufbauen:</p>
+
+  <table>
+    <thead><tr><th>Ebene</th><th>Was</th><th>Wie</th></tr></thead>
+    <tbody>
+      <tr><td><strong>A</strong></td><td>Sieg/Remis/Niederlage pro Einzelspiel (z.B. 47/13/40&nbsp;%)</td><td>Dixon-Coles-Tor-Modell, später ersetzt durch Elo-Engine</td></tr>
+      <tr><td><strong>B</strong></td><td>Exaktes Resultat als Zwischenschritt (2:1, 0:0, 3:2 &hellip;)</td><td>Score-Matrix aus Ebene A</td></tr>
+      <tr><td><strong>C</strong></td><td>Wer wird Weltmeister? (z.B. Argentinien 14&nbsp;%)</td><td>Monte-Carlo-Simulation von 10&nbsp;000 Turnieren</td></tr>
+    </tbody>
+  </table>
+
+  <p>Der rote Faden: <em>Ebene A liefert die Bausteine, Monte Carlo aggregiert sie zu Ebene C.</em> Ebene B ist nur Zwischenrechnung für Tordifferenzen (wichtig für Gruppenphasen-Rangfolgen).</p>
+
+  <div class="callout">
+    <span class="label">Warum nicht einfach LightGBM?</span>
+    <p>Klassische ML-Modelle (XGBoost, LightGBM) brauchen viele Features pro Spiel und liefern oft schlechter kalibrierte Wahrscheinlichkeiten als ein gut gewähltes statistisches Modell. Im Backtest auf der WM&nbsp;2022 schlägt die Elo-Engine die Baseline um 4.4&nbsp;% RPS-Punkte — eine spätere LightGBM-Iteration steht auf der Roadmap, ist aber kein Selbstzweck.</p>
+  </div>
+</section>
+
+<!-- ============ 02 — Architektur ============ -->
+<section class="wrap">
+  <span class="phase-tag">Kapitel 02</span>
+  <h2>Architektur im Überblick</h2>
+  <p class="lede">Drei Welten greifen ineinander: Daten kommen rein, ein Modell rechnet, Artefakte werden auf GitHub Pages publiziert.</p>
+
+  <div class="diagram">
+   ROHDATEN                MODELL                    PIPELINE                   FRONTEND
+  ──────────             ──────────                ──────────                ──────────
+  results.csv ──┐       ┌─ Dixon-Coles ─┐         live_forecast.py         docs/index.html
+  (1872-heute)  │       │  (Tor-Modell)  │              │                        │
+                ├──────▶│                ├──▶ Monte ────┼──▶ output/*.json ──▶  fetch()
+  TheSportsDB ──┘       │     Elo-Engine │     Carlo    │   history.csv          │
+  (Live-WM)             └────────────────┘    10 000    │   results.json       Chart.js
+                                              Turniere  ▼                        ▼
+                                                       commit + push       GitHub Pages
+                                                       (täglich 06:00 UTC)   öffentliche URL
+  </div>
+
+  <h3>Drei Layer, drei Sprachen</h3>
+
+  <ul>
+    <li><strong>Daten-Layer</strong> — CSV mit allen Länderspielen seit 1872 (~ 47 000 Zeilen) als Trainingsgrundlage; TheSportsDB-API für Live-Resultate der laufenden WM.</li>
+    <li><strong>Modell-Layer</strong> — reine Python-Bibliothek in <span class="filepath">src/wm_model.py</span>. Wird sowohl von Notebooks (zum Experimentieren) als auch vom Automatik-Skript verwendet — eine einzige Quelle der Wahrheit.</li>
+    <li><strong>Publikations-Layer</strong> — GitHub Actions ruft das Skript täglich auf, committet die Ergebnisse zurück ins Repo, GitHub Pages serviert das HTML-Dashboard.</li>
+  </ul>
+
+  <h3>Warum diese Trennung</h3>
+  <p>Notebooks sind super zum Forschen, aber schlecht zum Automatisieren. Deshalb wandert jede Logik, die später in Production läuft, ins <span class="filepath">src/</span>-Modul. Die Notebooks <em>importieren</em> nur — sie definieren keine eigenen Modelle mehr. So vermeidet man, dass Notebook und Automatik unterschiedliche Versionen rechnen.</p>
+</section>
+
+<!-- ============ 03 — Phase 1 Dixon-Coles ============ -->
+<section class="wrap">
+  <span class="phase-tag">Phase 01 &middot; Notebook 01</span>
+  <h2>Tor-Modell mit Dixon-Coles</h2>
+  <p class="lede">Wir starten mit einem statistischen Klassiker: Tore sind seltene Ereignisse, also Poisson-verteilt — und Dixon-Coles erweitert das Modell um Stärke-Parameter pro Team plus eine Korrektur für niedrige Scores.</p>
+
+  <h3>Poisson-Verteilung — die Grundidee</h3>
+  <p>Wenn ein Team im Schnitt 1.4 Tore pro Spiel macht, dann ist die Wahrscheinlichkeit für genau <em>k</em> Tore gegeben durch:</p>
+
+  <div class="formula">
+    P(k Tore) &nbsp;=&nbsp; λ<sup>k</sup> · e<sup>−λ</sup> &nbsp;/&nbsp; k!
+    <span class="where">λ (lambda) = erwartete Tore in diesem Spiel, e ≈ 2.718, k! = k-Fakultät</span>
+  </div>
+
+  <p>Wenn man die Tor-Erwartung für Heim- und Auswärtsteam unabhängig modelliert, bekommt man eine ganze <em>Score-Matrix</em>: P(0:0), P(1:0), P(2:1), &hellip; Summiert man die Felder unterhalb der Diagonale, ergibt das die Heimsieg-Wahrscheinlichkeit. Diagonale = Remis. Oberhalb = Auswärtssieg.</p>
+
+  <h3>Dixon-Coles — die drei Erweiterungen</h3>
+  <p>Reine Poisson reicht in der Praxis nicht. Dixon & Coles (1997) ergänzen drei Dinge:</p>
+
+  <ol>
+    <li><strong>Stärke-Parameter pro Team:</strong> Angriff α<sub>i</sub> und Verteidigung β<sub>i</sub>. Erwartete Tore Heim: λ<sub>H</sub> = exp(α<sub>H</sub> + β<sub>A</sub> + γ), wobei γ der Heimvorteil ist.</li>
+    <li><strong>Heimvorteil γ</strong> als globaler Bonus — empirisch ungefähr 0.3 (multiplikativ etwa 1.35× mehr erwartete Tore zuhause).</li>
+    <li><strong>Korrektur τ für niedrige Scores:</strong> Die unabhängige Poisson überschätzt 0:0, 1:1 und 1:0/0:1. τ korrigiert genau diese vier Zellen der Matrix nach unten bzw. oben.</li>
+  </ol>
+
+  <p>Alle Parameter werden per <strong>Maximum-Likelihood</strong> aus den historischen Daten geschätzt — mit Zeitabschlag, sodass Spiele aus 1990 weniger zählen als solche aus 2024 (Halbwertszeit ungefähr 2 Jahre).</p>
+
+  <h3>RPS — wie wir Modellgüte messen</h3>
+  <p>Zu sagen "das Modell stimmt zu 60&nbsp;%" reicht nicht — Wahrscheinlichkeiten sind reichhaltiger als Ja/Nein. Der <strong>Ranked Probability Score</strong> bewertet, wie nahe die prognostizierte Verteilung am tatsächlichen Ausgang lag. Niedriger = besser, perfekt = 0.</p>
+
+  <div class="formula">
+    RPS &nbsp;=&nbsp; (1 / (n−1)) · Σ<sub>i=1..n−1</sub> (Σ<sub>j≤i</sub> (p<sub>j</sub> − o<sub>j</sub>))<sup>2</sup>
+    <span class="where">n = 3 Ausgänge (Heim/Remis/Auswärts), p<sub>j</sub> = prognostizierte W&#x2010;keit, o<sub>j</sub> ∈ {0, 1} = tatsächlicher Ausgang</span>
+  </div>
+
+  <p>Das Quadrieren in den Klammern bestraft Modelle stärker, die falsch <em>und</em> selbstsicher waren. Der Baseline-Backtest auf der WM&nbsp;2022 ergibt RPS = 0.2316.</p>
+
+  <div class="callout">
+    <span class="label">Code-Pointer</span>
+    <p>Das Modell wird in <span class="filepath">notebooks/01_dixon_coles_baseline.ipynb</span> hergeleitet und auf der WM&nbsp;2022 backtested. Die produktive Implementation liegt in <span class="filepath">src/wm_model.py</span> in der Funktion <code>fit_goal_model()</code> und der Klasse <code>GoalModel</code>.</p>
+  </div>
+</section>
+
+<!-- ============ 04 — Phase 2 Monte Carlo ============ -->
+<section class="wrap">
+  <span class="phase-tag">Phase 02 &middot; Notebook 02</span>
+  <h2>Monte-Carlo-Simulation des Turniers</h2>
+  <p class="lede">Ein Modell pro Einzelspiel ist eine Sache. Die Frage "wer wird Weltmeister?" zu beantworten heisst, das ganze Turnier 10 000 Mal zu spielen — und zu zählen, wie oft jede Mannschaft am Ende den Pokal hochhebt.</p>
+
+  <h3>Das WM-2026-Format</h3>
+  <p>Erstmals 48 Teams, das macht die Simulation umfangreicher als früher:</p>
+
+  <ul>
+    <li><strong>Gruppenphase:</strong> 12 Gruppen à 4 Teams, jeder gegen jeden — 6 Spiele pro Gruppe, gesamt <strong>72 Spiele</strong></li>
+    <li><strong>Aufstieg:</strong> Top 2 jeder Gruppe (24 Teams) plus die <strong>8 besten Gruppendritten</strong> ergibt 32 Teams für die K.-o.-Runde</li>
+    <li><strong>K.-o.-Phase:</strong> Achtelfinale → Viertel → Halb → Final/Spiel um Platz 3 — <strong>32 Spiele</strong></li>
+    <li><strong>Total:</strong> 104 Spiele über etwa 5 Wochen</li>
+  </ul>
+
+  <h3>So läuft eine einzelne Simulation</h3>
+
+  <ul class="steps">
+    <li>Für jedes der 72 Gruppen-Spiele: Tor-Modell ausrechnen, dann <em>aus der Verteilung ziehen</em> — d.h. ein konkretes Resultat würfeln. Beispiel: das Modell sagt 47/13/40&nbsp;% Heim/Remis/Auswärts; im Würfel kommt 0.62 raus, also Auswärtssieg.</li>
+    <li>Tabellen pro Gruppe nach den FIFA-Tiebreaker-Regeln sortieren (Punkte → Tordifferenz → Tore → Direktvergleich).</li>
+    <li>Top 2 plus die 8 besten Dritten ermitteln. (Aktuell vereinfacht via Finish-Seeding, die exakte FIFA-Zuordnungstabelle folgt in Phase&nbsp;2b der Roadmap.)</li>
+    <li>K.-o.-Bracket aufbauen, jedes Spiel wieder per Tor-Modell würfeln. Bei Remis nach 90 Minuten: zusätzlich Verlängerung &amp; Penalties simulieren (vereinfacht 50/50).</li>
+    <li>Den Sieger des Finals notieren.</li>
+  </ul>
+
+  <p>Dieses Spiel wiederholen wir 10 000-mal. Argentinien gewinnt in 1 400 dieser Universen? → Titel-Chance = 14&nbsp;%.</p>
+
+  <h3>Warum genau 10 000?</h3>
+  <p>Bei 10 000 Iterationen ist der <strong>Standardfehler</strong> einer 10&nbsp;%-Wahrscheinlichkeit etwa √(0.1·0.9/10000) ≈ 0.3 Prozentpunkte — präzise genug für Tagesvergleiche, schnell genug für den 06:00-Cron (etwa 8 Sekunden auf einem GitHub-Actions-Runner). Mit 100 000 Sims würde der Fehler nur um Faktor √10 kleiner — der Aufwand aber 10× grösser.</p>
+
+  <div class="callout">
+    <span class="label">Code-Pointer</span>
+    <p><span class="filepath">notebooks/02_monte_carlo_simulation.ipynb</span> erklärt das Format und visualisiert das Bracket. Produktiv: <code>wm.simulate_tournament()</code> in <span class="filepath">src/wm_model.py</span>. Aggregation zu Titel/Finale/Halbfinale-W-keit in <code>build_forecast()</code>.</p>
+  </div>
+</section>
+
+<!-- ============ 05 — Phase 3 Elo ============ -->
+<section class="wrap">
+  <span class="phase-tag">Phase 03 &middot; Notebook 03</span>
+  <h2>Elo-Engine als Modell-Upgrade</h2>
+  <p class="lede">Dixon-Coles funktioniert, hat aber Schwächen — vor allem für selten spielende Nationen ist die Schätzung instabil. Elo-Ratings sind robuster und kalibrieren sich nach jedem Spiel selbst.</p>
+
+  <h3>Wie Elo funktioniert</h3>
+  <p>Jedes Team hat eine Rating-Zahl R. Vor jedem Spiel berechnet man die erwartete "Punktzahl" (Sieg = 1, Remis = 0.5, Niederlage = 0):</p>
+
+  <div class="formula">
+    E<sub>A</sub> &nbsp;=&nbsp; 1 / (1 + 10<sup>(R<sub>B</sub> − R<sub>A</sub>) / 400</sup>)
+    <span class="where">E<sub>A</sub> = erwartete Punkte für Team A &middot; R<sub>A</sub>, R<sub>B</sub> = aktuelle Ratings &middot; 400 = Schach-Standard-Skala</span>
+  </div>
+
+  <p>Nach dem Spiel wird das Rating updatet — je grösser die Überraschung, desto stärker:</p>
+
+  <div class="formula">
+    R<sub>A,neu</sub> &nbsp;=&nbsp; R<sub>A</sub> &nbsp;+&nbsp; K · (S<sub>A</sub> − E<sub>A</sub>)
+    <span class="where">S<sub>A</sub> ∈ {0, 0.5, 1} = tatsächliches Ergebnis &middot; K = Lernrate (hier 30 für WMs, 20 für Freundschaftsspiele)</span>
+  </div>
+
+  <h3>Vom Rating zur Sieg-Wahrscheinlichkeit</h3>
+  <p>E<sub>A</sub> aus der Formel oben <em>ist</em> die erwartete Punktzahl — also etwas zwischen 0 und 1. Mit einer Logistik-Funktion und Daten-Fit übersetzt man das in Heim/Remis/Auswärts-Wahrscheinlichkeiten. Diese Übersetzung lernt das Modell ebenfalls aus den historischen Spielen (Logistic Regression auf RatingDifferenz → 1/X/2).</p>
+
+  <h3>Was bringt's konkret?</h3>
+  <p>Backtest auf der WM&nbsp;2022 (alle 64 Spiele):</p>
+
+  <table>
+    <thead><tr><th>Modell</th><th>RPS (niedriger = besser)</th><th>Δ zur Baseline</th></tr></thead>
+    <tbody>
+      <tr><td>Dixon-Coles (Baseline)</td><td>0.2316</td><td>—</td></tr>
+      <tr><td>Elo-Engine</td><td><strong>0.2215</strong></td><td>−4.4&nbsp;%</td></tr>
+    </tbody>
+  </table>
+
+  <p>4.4&nbsp;% klingt wenig — ist aber im Fussball-Prognose-Kontext substanziell. Profi-Bookmaker bewegen sich typischerweise bei RPS ~ 0.19.</p>
+
+  <h3>Heimvorteil bleibt drin</h3>
+  <p>Beim Update gibt es einen Bonus, wenn das Heimteam tatsächlich zuhause spielt (nicht auf neutralem Boden). Bei WM-Spielen heisst "zuhause" nur: Spiel im eigenen Land — d.h. für die WM&nbsp;2026 sind nur Spiele mit Mexico/USA/Canada als Heimteam echte Heimspiele.</p>
+
+  <div class="callout">
+    <span class="label">Code-Pointer</span>
+    <p>Herleitung mit Hyperparameter-Suche in <span class="filepath">notebooks/03_elo_model.ipynb</span>. Implementation als Klasse <code>EloEngine</code> in <span class="filepath">src/wm_model.py</span> — bekommt einen historischen DataFrame, baut interne Rating-Tabelle, bietet <code>predict()</code> für eine Match-Paarung.</p>
+  </div>
+</section>
+
+<!-- ============ 06 — Phase 4 Live ============ -->
+<section class="wrap">
+  <span class="phase-tag">Phase 04 &middot; Notebook 04 + src/live_forecast.py</span>
+  <h2>Live-Schicht mit TheSportsDB</h2>
+  <p class="lede">Während das Turnier läuft, wollen wir gespielte Resultate ins Modell zurückspielen. Das passiert in zwei Schritten — Fixieren und Re-Simulieren.</p>
+
+  <h3>Die Datenquelle</h3>
+  <p>TheSportsDB liefert über die Endpoint <code>eventsseason.php?id=4429&amp;s=2026</code> alle WM-Spiele (Liga-ID 4429 = FIFA World Cup) inklusive Score-Felder, sobald gespielt. Der API-Aufruf ist eine einzige HTTP-GET-Anfrage; bei Free-Tier liefert die WM-Liga keine Daten, deshalb wird ein Patreon-Key gebraucht. Der Key landet in der Umgebungsvariable <code>SPORTSDB_KEY</code> — lokal über die Shell, in der CI über ein Repo-Secret.</p>
+
+  <pre><code>API_KEY = os.environ.get("SPORTSDB_KEY", "")
+base = f"https://www.thesportsdb.com/api/v1/json/{API_KEY}"
+r = requests.get(f"{base}/eventsseason.php",
+                 params={"id": 4429, "s": "2026"}, timeout=20)
+events = r.json().get("events") or []</code></pre>
+
+  <h3>Was im Modell passiert</h3>
+
+  <ul class="steps">
+    <li><strong>Live abrufen:</strong> alle Spiele holen, die einen <code>intHomeScore</code> haben (also tatsächlich gespielt sind).</li>
+    <li><strong>Elo updaten:</strong> jedes gespielte Spiel in chronologischer Reihenfolge ins Rating einfliessen lassen.</li>
+    <li><strong>Spiele fixieren:</strong> in der Monte-Carlo-Simulation werden gespielte Resultate <em>nicht</em> mehr gewürfelt, sondern als gegeben verwendet. So bleiben die simulierten Universen mit der Realität konsistent.</li>
+    <li><strong>Rest neu simulieren:</strong> alles Übrige (offene Gruppenspiele, K.-o.-Bracket) wird wie gehabt 10 000-mal durchgespielt.</li>
+  </ul>
+
+  <h3>Robust gegen Probleme</h3>
+  <p>Was passiert, wenn die API down ist, der Key fehlt oder ein Teamname nicht aufgelöst werden kann? Das Skript fängt jeden Fehler ab und fällt sauber auf die <em>Vorturnier-Prognose</em> zurück — also auf das Modell ohne Live-Updates. Eine Warnzeile im Log macht das transparent, aber der Cron-Lauf scheitert nicht.</p>
+
+  <div class="callout warn">
+    <span class="label">Name-Mapping</span>
+    <p>TheSportsDB nennt Teams teils anders als der Trainingsdatensatz (z.B. "USA" statt "United States"). Das Mapping ist in <span class="filepath">src/live_forecast.py</span> in der Tabelle <code>NAME_MAP</code> hartkodiert und wurde am 23.05.2026 gegen den vollständigen Spielplan verifiziert.</p>
+  </div>
+
+  <h3>Pre-Match-Snapshots einfrieren</h3>
+  <p>Damit das Dashboard später "Prognose vor Anpfiff vs. tatsächliches Resultat" zeigen kann, schreibt das Skript bei jedem Lauf für jedes anstehende Spiel eine eingefrorene Vorhersage in <span class="filepath">output/predictions_archive/YYYY-MM-DD.json</span>. Sobald ein Spiel tatsächlich gespielt ist, fällt es aus der "offenen"-Liste raus, und der zuletzt geschriebene Snapshot bleibt als Referenz stehen.</p>
+</section>
+
+<!-- ============ 07 — Phase 5 Pro Spiel ============ -->
+<section class="wrap">
+  <span class="phase-tag">Phase 05 &middot; Notebook 05</span>
+  <h2>Pro-Spiel-Prognose (1/X/2)</h2>
+  <p class="lede">Manche Leser:innen wollen nicht "wer wird Weltmeister" wissen, sondern "wer gewinnt heute". Diese Sicht ist Ebene&nbsp;A direkt — die Bausteine, aus denen Monte&nbsp;Carlo die Titel-Wahrscheinlichkeit baut.</p>
+
+  <h3>Was rauskommt</h3>
+  <p>Pro noch nicht gespieltes WM-Spiel:</p>
+  <ul>
+    <li><strong>1/X/2</strong> — Heimsieg / Remis / Auswärtssieg in Prozent</li>
+    <li><strong>Wahrscheinlichstes Resultat</strong> — die hellste Zelle der Score-Matrix (z.B. "2:1")</li>
+    <li><strong>Wahrscheinlichkeit dieses Resultats</strong> — meist nur etwa 9-13&nbsp;%, weil viele Resultate ähnlich plausibel sind</li>
+    <li><strong>Heimvorteil-Flag</strong> — ist das ein echtes Heimspiel eines Gastgebers?</li>
+  </ul>
+
+  <p>Notebook&nbsp;05 ist die interaktive Variante mit Filtern: nach Team, nach Datum, oder "spannendste Spiele" (jene mit den ausgeglichensten 1/X/2-Verteilungen — die machen am meisten Spass anzuschauen).</p>
+
+  <div class="callout">
+    <span class="label">Code-Pointer</span>
+    <p>Funktion <code>predict_remaining_matches()</code> in <span class="filepath">src/wm_model.py</span>. Headless-Output unter <span class="filepath">output/matches.json</span> bzw. <span class="filepath">matches.md</span> für die Anzeige direkt im Repo.</p>
+  </div>
+</section>
+
+<!-- ============ 08 — Automation ============ -->
+<section class="wrap">
+  <span class="phase-tag">Phase 06</span>
+  <h2>Automatik via GitHub Actions</h2>
+  <p class="lede">Damit niemand jeden Morgen ein Notebook starten muss, übernimmt GitHub Actions den Job — kostenlos, zuverlässig, und der commit kommt direkt vom Bot.</p>
+
+  <h3>Was ist ein GitHub-Actions-Workflow?</h3>
+  <p>Eine YAML-Datei unter <span class="filepath">.github/workflows/</span>, die GitHub als Definition für eine ausführbare Pipeline interpretiert. Auslöser sind <em>Events</em> — Push, Pull Request, Cron-Zeitplan, oder manueller Klick. Die Pipeline läuft auf einem temporären Linux-Runner; alle Steps darin haben Zugriff aufs Repo (ausgecheckt via <code>actions/checkout</code>) und können beliebige Shell-Befehle ausführen.</p>
+
+  <h3>Der Workflow im Detail</h3>
+
+  <pre><code>name: WM 2026 Live-Prognose
+
+on:
+  schedule:
+    - cron: "0 6 * * *"        # täglich 06:00 UTC
+  workflow_dispatch: {}         # plus manueller Trigger
+
+jobs:
+  forecast:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write           # Bot darf commit + push
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Prognose berechnen
+        env:
+          SPORTSDB_KEY: ${{ secrets.SPORTSDB_KEY }}
+        run: python src/live_forecast.py
+      - name: Output nach docs/data spiegeln
+        run: |
+          mkdir -p docs/data
+          cp output/forecast.json output/matches.json output/results.json docs/data/
+          cp output/history.csv docs/data/
+      - name: Ergebnis committen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/ docs/data/
+          git commit -m "Live-Prognose $(date -u +%Y-%m-%d)" || echo "Keine Aenderung"
+          git push</code></pre>
+
+  <h3>Cron-Syntax kurz erklärt</h3>
+  <p><code>"0 6 * * *"</code> besteht aus fünf Feldern: <em>Minute &middot; Stunde &middot; Tag &middot; Monat &middot; Wochentag</em>. <code>0 6</code> heisst "Minute 0 der 6. Stunde" — und die Sterne stehen für "jeden Tag/Monat/Wochentag". Also: täglich um 06:00 UTC = 08:00 Schweizer Sommerzeit. Davor sind die Spiele des Vortags zu Ende und die API hat die Resultate.</p>
+
+  <h3>Secrets — wie der API-Key sicher reinkommt</h3>
+  <p>Der TheSportsDB-Key darf nicht im Code stehen, sonst sieht ihn jeder. Lösung: <em>Repository Secrets</em>. Im GitHub-Repo unter <strong>Settings → Secrets and variables → Actions</strong> einen neuen Secret <code>SPORTSDB_KEY</code> mit dem Patreon-Key anlegen. Der Workflow liest ihn über <code>${{ secrets.SPORTSDB_KEY }}</code> und übergibt ihn als Umgebungsvariable an Python — er taucht in Logs nur als <code>***</code> auf.</p>
+
+  <h3>Permissions — warum ein "write"-Token nötig ist</h3>
+  <p>Standardmässig haben Actions nur Lesezugriff aufs Repo. Wir wollen aber zurückcommitten. Die Zeile <code>permissions: contents: write</code> hebt das Token auf Schreibrecht. Das ist sicherer als ein persönlicher PAT, weil das Token nur für die Dauer des Workflow-Laufs gilt und genau diese eine Berechtigung hat.</p>
+
+  <h3>Was passiert, wenn nichts neu ist?</h3>
+  <p>Die Zeile <code>git commit ... || echo "Keine Aenderung"</code> sorgt dafür, dass der Lauf nicht failed, wenn die Outputs identisch sind. Praktisch passiert das eher selten — schon das Update-Timestamp im JSON ist neu, also gibt's praktisch jeden Tag einen Commit.</p>
+
+  <div class="callout">
+    <span class="label">Beobachten und Debuggen</span>
+    <p>Im GitHub-Repo unter <strong>Actions</strong>-Tab sieht man jeden Lauf, ob er grün/rot war, und kann sich jedes Step-Log live oder im Nachhinein ansehen. Auf "Re-run failed jobs" klicken startet den Workflow nochmal mit der gleichen Konfiguration.</p>
+  </div>
+</section>
+
+<!-- ============ 09 — Phase 7 Dashboard ============ -->
+<section class="wrap">
+  <span class="phase-tag">Phase 07</span>
+  <h2>Dashboard auf GitHub Pages</h2>
+  <p class="lede">Das Endprodukt — eine Single-Page-Webapp, die die JSON-Artefakte direkt im Browser rendert. Kein Server, kein Login, einfach eine bookmarkbare URL.</p>
+
+  <h3>So fliessen die Daten</h3>
+
+  <div class="diagram">
+  output/forecast.json ─┐
+  output/matches.json   │     täglicher        docs/data/*.json ────fetch()────▶ Chart.js + Vanilla JS
+  output/results.json   ├────── Cron ─────▶                                            │
+  output/history.csv ───┘   (kopiert, push)                                            ▼
+                                                                              Dashboard im Browser
+  </div>
+
+  <p>Der Workflow kopiert die JSON/CSV-Dateien aus <span class="filepath">output/</span> nach <span class="filepath">docs/data/</span>, damit GitHub Pages sie unter einem festen URL-Stamm ausliefert. Das Dashboard-JavaScript holt die vier Dateien per <code>fetch()</code> und rendert sechs Sektionen — Titel-Chancen, Verlaufschart, nächste Spiele, gespielte Spiele (mit Prognose-vs-Realitäts-Vergleich), Bewegungs-Spotlight.</p>
+
+  <h3>Warum statisches HTML, nicht Streamlit?</h3>
+  <p>Streamlit braucht einen laufenden Python-Server — also entweder Streamlit Cloud (separater Account) oder die eigene Maschine. Statisches HTML auf Pages ist <em>immer</em> verfügbar, ohne dass irgendwas läuft. Die JSON-Dateien sind die "Datenbank" — minimal, versioniert, frei abrufbar.</p>
+
+  <div class="callout">
+    <span class="label">Aktivierung in 30 Sekunden</span>
+    <p>Repo → <strong>Settings → Pages</strong> → Source <em>Deploy from a branch</em> → Branch <code>main</code>, Folder <code>/docs</code> → <em>Save</em>. Nach 1-2 Minuten ist die Seite unter <code>https://&lt;user&gt;.github.io/&lt;repo&gt;/</code> live.</p>
+  </div>
+</section>
+
+<!-- ============ 10 — Reproduktion ============ -->
+<section class="wrap">
+  <span class="phase-tag">Kapitel 10</span>
+  <h2>Reproduktion — bau es selbst nach</h2>
+  <p class="lede">Wer das Projekt für die nächste WM (oder eine andere Liga) nachbauen will, braucht keine zwei Stunden. Hier ist die Checkliste.</p>
+
+  <ul class="steps">
+    <li>
+      <strong>Repo forken oder neu anlegen.</strong> Auf GitHub auf das Quell-Repo gehen und "Fork" klicken, oder das Projekt clonen und in ein eigenes leeres Repo pushen.
+      <pre><code>git clone https://github.com/&lt;user&gt;/World-Cup-2026.git
+cd World-Cup-2026</code></pre>
+    </li>
+    <li>
+      <strong>Conda-Umgebung anlegen.</strong> Python&nbsp;3.12, alle Abhängigkeiten aus <span class="filepath">requirements.txt</span>.
+      <pre><code>conda create -n wm2026 python=3.12 -y
+conda activate wm2026
+pip install -r requirements.txt</code></pre>
+    </li>
+    <li>
+      <strong>TheSportsDB-Account einrichten.</strong> Auf <code>thesportsdb.com</code> einen Patreon-Account abschliessen (ab ca. 3&nbsp;USD/Monat) und den persönlichen API-Key kopieren.
+    </li>
+    <li>
+      <strong>Lokal testen.</strong> Key in die Shell setzen, Skript starten — sollte vier JSON-Dateien in <span class="filepath">output/</span> erzeugen.
+      <pre><code>$env:SPORTSDB_KEY = "DEIN_PATREON_KEY"
+python src/live_forecast.py</code></pre>
+    </li>
+    <li>
+      <strong>Secret im Repo hinterlegen.</strong> Auf GitHub: <em>Settings → Secrets and variables → Actions → New repository secret</em>. Name: <code>SPORTSDB_KEY</code>, Value: dein Key.
+    </li>
+    <li>
+      <strong>Pages aktivieren.</strong> <em>Settings → Pages → Source: Deploy from a branch → Branch: <code>main</code>, Folder: <code>/docs</code> → Save</em>. URL ist <code>https://&lt;user&gt;.github.io/&lt;repo&gt;/</code>.
+    </li>
+    <li>
+      <strong>Ersten Cron-Lauf triggern.</strong> Im <em>Actions</em>-Tab den Workflow "WM 2026 Live-Prognose" auswählen → <em>Run workflow</em>. Nach 1-2 Minuten ist <span class="filepath">docs/data/</span> gefüllt und das Dashboard zeigt Daten.
+    </li>
+    <li>
+      <strong>Anpassen.</strong> Andere Liga? Liga-ID in <span class="filepath">src/live_forecast.py</span> (Variable <code>WC_LEAGUE_ID</code>) ändern, ggf. Saison anpassen. Andere Visualisierung? <span class="filepath">docs/index.html</span> editieren — alles in einer Datei.
+    </li>
+  </ul>
+
+  <div class="callout warn">
+    <span class="label">Häufige Stolpersteine</span>
+    <p>Repo muss <strong>public</strong> sein für gratis Pages. Workflow committet nur, wenn die Pipeline <code>contents:&nbsp;write</code> hat. Wenn die Dashboard-URL nur 404 zeigt, checke ob Pages auf <code>/docs</code> zeigt (nicht <code>/&nbsp;(root)</code>).</p>
+  </div>
+</section>
+
+<!-- ============ 11 — Datei-Referenz ============ -->
+<section class="wrap">
+  <span class="phase-tag">Kapitel 11</span>
+  <h2>Datei-Referenz</h2>
+  <p class="lede">Eine Karte des Repos — jede Datei mit einem Satz Zweck.</p>
+
+  <h3>Kerncode</h3>
+  <table>
+    <thead><tr><th>Pfad</th><th>Zweck</th></tr></thead>
+    <tbody>
+      <tr><td><code>src/wm_model.py</code></td><td>Die ganze Modell-Engine: Elo-Klasse, Tor-Modell, Gruppen-Sortierung, Monte-Carlo, Pro-Spiel-Prognose. Eine Datei, eine Wahrheit — Notebooks und Automatik importieren dieselben Funktionen.</td></tr>
+      <tr><td><code>src/live_forecast.py</code></td><td>Headless-Skript für die Automatik. Holt Live-Resultate, ruft <code>wm_model</code> auf, schreibt Artefakte nach <code>output/</code>, archiviert Pre-Match-Snapshots, baut <code>results.json</code>.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Notebooks (zum Lesen / Forschen)</h3>
+  <table>
+    <thead><tr><th>Datei</th><th>Phase</th><th>Inhalt</th></tr></thead>
+    <tbody>
+      <tr><td><code>01_dixon_coles_baseline.ipynb</code></td><td>1</td><td>Tor-Modell von Grund auf, WM-2022-Backtest, RPS = 0.2316</td></tr>
+      <tr><td><code>02_monte_carlo_simulation.ipynb</code></td><td>2</td><td>WM-2026-Format, Bracket, 10 000 Simulationen, Titel-Verteilung</td></tr>
+      <tr><td><code>03_elo_model.ipynb</code></td><td>4</td><td>Elo-Engine, Hyperparameter-Suche, Backtest-Vergleich, RPS −4.4&nbsp;%</td></tr>
+      <tr><td><code>04_live_update.ipynb</code></td><td>3</td><td>Trockentest der Live-Logik mit der echten API, Erklärung der Pipeline</td></tr>
+      <tr><td><code>05_match_predictions.ipynb</code></td><td>5</td><td>Pro-Spiel-Prognose interaktiv, Filter, "spannendste Spiele"</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Daten und Artefakte</h3>
+  <table>
+    <thead><tr><th>Pfad</th><th>Zweck</th></tr></thead>
+    <tbody>
+      <tr><td><code>data/results.csv</code></td><td>Trainingsdaten — alle internationalen Spielresultate seit 1872 (~47k Zeilen). Wird beim ersten Lauf automatisch von einem GitHub-Mirror geladen.</td></tr>
+      <tr><td><code>output/forecast.json</code></td><td>Titel-/Finale-/Halbfinal-Wahrscheinlichkeiten pro Team. Quelle für die Dashboard-Sektion "Titel-Chancen".</td></tr>
+      <tr><td><code>output/matches.json</code></td><td>Pro-Spiel-Prognose für alle offenen WM-Partien. Quelle für "Nächste Spiele".</td></tr>
+      <tr><td><code>output/results.json</code></td><td>Gespielte Spiele + die Pre-Match-Prognose dazu. Quelle für "Prognose vs. Realität".</td></tr>
+      <tr><td><code>output/history.csv</code></td><td>Zeitreihe: eine Zeile je Team und Tag. Quelle für Verlaufschart und Bewegungs-Spotlight.</td></tr>
+      <tr><td><code>output/predictions_archive/</code></td><td>Pro Spieltag eine JSON-Datei mit dem zuletzt eingefrorenen Forecast.</td></tr>
+      <tr><td><code>output/goal_coefs.json</code></td><td>Gecachte Modell-Koeffizienten — vermeidet, dass jeder Cron-Lauf neu fittet.</td></tr>
+      <tr><td><code>output/*.md</code></td><td>Markdown-Spiegel der JSONs — direkt im Repo lesbar, ohne Dashboard.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Frontend und Doku</h3>
+  <table>
+    <thead><tr><th>Pfad</th><th>Zweck</th></tr></thead>
+    <tbody>
+      <tr><td><code>docs/index.html</code></td><td>Das Dashboard. Single-File, Vanilla JS, Chart.js via CDN, lädt die JSON-Dateien aus <code>docs/data/</code>.</td></tr>
+      <tr><td><code>docs/data/</code></td><td>Spiegel von <code>output/</code> für GitHub Pages. Wird vom Cron-Lauf befüllt.</td></tr>
+      <tr><td><code>docs/methodik.md</code></td><td>Mathematische Vertiefung — Poisson-Herleitung, Dixon-Coles-Original-Paper-Referenzen, RPS-Theorie.</td></tr>
+      <tr><td><code>docs/anleitung.html</code></td><td>Diese Anleitung (HTML-Quelle für das PDF).</td></tr>
+      <tr><td><code>README.md</code></td><td>Kurzfassung: Setup, Roadmap, Verweis auf alle anderen Doku-Dateien.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Infrastruktur</h3>
+  <table>
+    <thead><tr><th>Pfad</th><th>Zweck</th></tr></thead>
+    <tbody>
+      <tr><td><code>.github/workflows/forecast.yml</code></td><td>Der Cron-Workflow. Läuft täglich 06:00 UTC oder per Hand. Holt Daten, rechnet, committet zurück.</td></tr>
+      <tr><td><code>requirements.txt</code></td><td>Python-Abhängigkeiten — minimal: pandas, numpy, scipy, requests.</td></tr>
+      <tr><td><code>.gitignore</code></td><td>Ignoriert <code>data/*.csv</code> (gross, wird zur Laufzeit geladen) und Standard-Python-Artefakte.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Schlusswort</h3>
+  <p>Wer alles bis hier gelesen hat, kennt jeden beweglichen Teil des Projekts. Das Schöne an der Architektur: keine Komponente ist gross. Modell = etwa 400 Zeilen Python. Automation = 35 Zeilen YAML. Dashboard = eine HTML-Datei. Wenn du etwas anpassen willst — irgendetwas — weisst du jetzt, wo du suchen musst.</p>
+
+  <p style="margin-top: 12mm; padding-top: 6mm; border-top: 1px solid var(--line); color: var(--muted); font-size: 9pt;">Doku-Version 1.0 &middot; erstellt am 23.05.2026 &middot; bei Änderungen am Code <span class="filepath">docs/anleitung.html</span> editieren und PDF neu rendern.</p>
+</section>
+
+</body>
+</html>
