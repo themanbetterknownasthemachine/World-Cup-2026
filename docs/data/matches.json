@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-23 13:58 UTC",
+  "updated": "2026-05-23 14:17 UTC",
   "live_matches": 0,
   "matches": [
     {
@@ -645,9 +645,9 @@
       "home_team": "Japan",
       "away_team": "Sweden",
       "home_advantage": false,
-      "p_home": 0.6044516957437279,
-      "p_draw": 0.22995666411297577,
-      "p_away": 0.16559164014329647,
+      "p_home": 0.6044516957437284,
+      "p_draw": 0.22995666411297563,
+      "p_away": 0.16559164014329641,
       "most_likely": "1:0",
       "p_most_likely": 0.1355987713176097
     },
@@ -789,7 +789,7 @@
       "away_team": "Ghana",
       "home_advantage": false,
       "p_home": 0.7513685661058644,
-      "p_draw": 0.16441414268523902,
+      "p_draw": 0.1644141426852389,
       "p_away": 0.08421729120889677,
       "most_likely": "2:0",
       "p_most_likely": 0.14308821507351482

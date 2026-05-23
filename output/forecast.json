@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-23 13:58 UTC",
+  "updated": "2026-05-23 14:17 UTC",
   "live_matches": 0,
   "forecast": [
     {
@@ -171,10 +171,10 @@
       "Halbfinale": 0.0193
     },
     {
-      "Team": "Czech Republic",
+      "Team": "Ivory Coast",
       "Titel": 0.0003,
-      "Finale": 0.0021,
-      "Halbfinale": 0.0101
+      "Finale": 0.0022,
+      "Halbfinale": 0.0097
     },
     {
       "Team": "Egypt",
@@ -183,10 +183,10 @@
       "Halbfinale": 0.0094
     },
     {
-      "Team": "Ivory Coast",
+      "Team": "Czech Republic",
       "Titel": 0.0003,
-      "Finale": 0.0022,
-      "Halbfinale": 0.0097
+      "Finale": 0.0021,
+      "Halbfinale": 0.0101
     },
     {
       "Team": "Scotland",
@@ -207,10 +207,10 @@
       "Halbfinale": 0.0036
     },
     {
-      "Team": "United States",
+      "Team": "Jordan",
       "Titel": 0.0001,
-      "Finale": 0.0018,
-      "Halbfinale": 0.0109
+      "Finale": 0.0013,
+      "Halbfinale": 0.0049
     },
     {
       "Team": "Haiti",
@@ -219,22 +219,40 @@
       "Halbfinale": 0.001
     },
     {
+      "Team": "United States",
+      "Titel": 0.0001,
+      "Finale": 0.0018,
+      "Halbfinale": 0.0109
+    },
+    {
       "Team": "New Zealand",
       "Titel": 0.0001,
       "Finale": 0.0004,
       "Halbfinale": 0.0035
     },
     {
-      "Team": "Jordan",
-      "Titel": 0.0001,
-      "Finale": 0.0013,
-      "Halbfinale": 0.0049
+      "Team": "Qatar",
+      "Titel": 0.0,
+      "Finale": 0.0001,
+      "Halbfinale": 0.0003
     },
     {
-      "Team": "Cape Verde",
+      "Team": "South Africa",
       "Titel": 0.0,
       "Finale": 0.0,
-      "Halbfinale": 0.001
+      "Halbfinale": 0.0008
+    },
+    {
+      "Team": "Bosnia and Herzegovina",
+      "Titel": 0.0,
+      "Finale": 0.0001,
+      "Halbfinale": 0.0009
+    },
+    {
+      "Team": "Saudi Arabia",
+      "Titel": 0.0,
+      "Finale": 0.0,
+      "Halbfinale": 0.0006
     },
     {
       "Team": "Sweden",
@@ -249,46 +267,28 @@
       "Halbfinale": 0.0002
     },
     {
-      "Team": "DR Congo",
-      "Titel": 0.0,
-      "Finale": 0.0003,
-      "Halbfinale": 0.0032
-    },
-    {
-      "Team": "Qatar",
-      "Titel": 0.0,
-      "Finale": 0.0001,
-      "Halbfinale": 0.0003
-    },
-    {
-      "Team": "Saudi Arabia",
+      "Team": "Cape Verde",
       "Titel": 0.0,
       "Finale": 0.0,
-      "Halbfinale": 0.0006
-    },
-    {
-      "Team": "Bosnia and Herzegovina",
-      "Titel": 0.0,
-      "Finale": 0.0001,
-      "Halbfinale": 0.0009
-    },
-    {
-      "Team": "South Africa",
-      "Titel": 0.0,
-      "Finale": 0.0,
-      "Halbfinale": 0.0008
-    },
-    {
-      "Team": "Ghana",
-      "Titel": 0.0,
-      "Finale": 0.0,
-      "Halbfinale": 0.0001
+      "Halbfinale": 0.001
     },
     {
       "Team": "Iraq",
       "Titel": 0.0,
       "Finale": 0.0008,
       "Halbfinale": 0.0023
+    },
+    {
+      "Team": "DR Congo",
+      "Titel": 0.0,
+      "Finale": 0.0003,
+      "Halbfinale": 0.0032
+    },
+    {
+      "Team": "Ghana",
+      "Titel": 0.0,
+      "Finale": 0.0,
+      "Halbfinale": 0.0001
     }
   ]
 }
