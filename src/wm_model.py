@@ -172,14 +172,15 @@ class Engine:
     def __init__(self, teams, elo, b):
         self.teams = teams
         self.wi = {t: i for i, t in enumerate(teams)}
+        self.b = b                                              # fuer on-the-fly HFA-Vorhersagen
         M = len(teams)
-        R = np.array([elo.get(t, BASE) for t in teams])
-        lam = lambda ra, rb: np.exp(b[0] + b[1]*(ra-rb)/100)   # neutral
+        self.R = np.array([elo.get(t, BASE) for t in teams])
+        lam = lambda ra, rb: np.exp(b[0] + b[1]*(ra-rb)/100)   # neutral (Default-Annahme WM)
         g = np.arange(MG)
         self.CUM = np.zeros((M, M, MG*MG)); self.PADV = np.zeros((M, M))
         for i in range(M):
             for j in range(M):
-                lh, la = lam(R[i], R[j]), lam(R[j], R[i])
+                lh, la = lam(self.R[i], self.R[j]), lam(self.R[j], self.R[i])
                 SM = np.outer(poisson.pmf(g, lh), poisson.pmf(g, la)); SM /= SM.sum()
                 self.CUM[i, j] = np.cumsum(SM.ravel())
                 ph, pa = np.tril(SM, -1).sum(), np.triu(SM, 1).sum()
@@ -191,6 +192,31 @@ class Engine:
     def winner(self, i, j, rng):
         h, a = self.play(i, j, rng)
         return i if h > a else (j if a > h else (i if rng.random() < self.PADV[i, j] else j))
+
+    def predict(self, i, j, home_advantage=False):
+        """Pro-Spiel-Prognose: (p_home, p_draw, p_away, (ml_home, ml_away), p_ml).
+
+        home_advantage=False (Default): nutzt die vorberechnete neutrale
+        Score-Matrix — passend fuer die meisten WM-Spiele.
+
+        home_advantage=True: berechnet die Score-Matrix on-the-fly mit dem
+        Heim-Bonus b[2] auf lambda_home — relevant fuer Gastgeber-Heimspiele
+        (Mexico/USA/Canada in eigenen Staedten).
+        """
+        if home_advantage:
+            g = np.arange(MG)
+            lh = np.exp(self.b[0] + self.b[1]*(self.R[i] - self.R[j])/100 + self.b[2])
+            la = np.exp(self.b[0] + self.b[1]*(self.R[j] - self.R[i])/100)
+            SM = np.outer(poisson.pmf(g, lh), poisson.pmf(g, la))
+            SM /= SM.sum()
+        else:
+            flat = np.concatenate([[self.CUM[i, j, 0]], np.diff(self.CUM[i, j])])
+            SM = flat.reshape(MG, MG)
+        p_h = float(np.tril(SM, -1).sum())
+        p_d = float(np.trace(SM))
+        p_a = float(np.triu(SM, 1).sum())
+        ml = np.unravel_index(SM.argmax(), SM.shape)
+        return p_h, p_d, p_a, (int(ml[0]), int(ml[1])), float(SM[ml])
 
 
 def _seed_order(N):
@@ -272,11 +298,14 @@ def simulate_tournament(groups, engine, known=None, n_sims=10000, seed=42):
 
 
 def build_forecast(local="data/results.csv", live_results=None, n_sims=10000,
-                   fit_cache=None):
+                   fit_cache=None, return_context=False):
     """Kompletter Durchlauf: Daten -> Elo (inkl. Live-Resultate) -> Engine ->
     Simulation. `live_results` = Liste von Spiel-Dicts (echte WM-Resultate).
     `fit_cache` = optionaler Pfad zum Cache der Tor-Regressions-Koeffizienten.
-    Gibt (DataFrame, Anzahl beruecksichtigter Live-Spiele) zurueck.
+
+    Default-Return: (DataFrame, Anzahl Live-Spiele).
+    Mit `return_context=True`: zusaetzlich dict mit engine/df_all/groups/known
+    fuer nachgelagerte Pro-Spiel-Prognosen (siehe predict_remaining_matches).
     """
     df_all, df = load_data(local)
     elo, df_pre = compute_elo(df, extra=live_results)
@@ -294,4 +323,52 @@ def build_forecast(local="data/results.csv", live_results=None, n_sims=10000,
                       m["away_team"]: m["away_score"]}
 
     result = simulate_tournament(groups, engine, known=known, n_sims=n_sims)
+    if return_context:
+        return result, len(known), {
+            "engine": engine, "df_all": df_all, "groups": groups, "known": known,
+        }
     return result, len(known)
+
+
+def predict_remaining_matches(df_all, engine, known=None,
+                              date_from="2026-06-11", date_to="2026-07-19"):
+    """Pro-Spiel-Prognose (Ebene A) fuer alle noch nicht gespielten WM-2026-
+    Fixtures im angegebenen Zeitfenster.
+
+    Gibt DataFrame mit Spalten:
+      date, home_team, away_team, p_home, p_draw, p_away,
+      most_likely (\"h:a\"), p_most_likely
+
+    Filter: tournament == 'FIFA World Cup', Datum im Fenster, mindestens ein
+    Score fehlt (= nicht gespielt). Zusaetzlich werden Paarungen aus `known`
+    uebersprungen (gespielt via Live-Quelle, auch wenn Datensatz das noch
+    nicht weiss).
+    """
+    fixtures = df_all[(df_all["tournament"] == "FIFA World Cup")
+                      & (df_all["date"].between(date_from, date_to))
+                      & (df_all["home_score"].isna() | df_all["away_score"].isna())]
+    known = known or {}
+    rows = []
+    for _, r in fixtures.iterrows():
+        home, away = r["home_team"], r["away_team"]
+        if home not in engine.wi or away not in engine.wi:
+            continue
+        if frozenset((home, away)) in known:
+            continue
+        i, j = engine.wi[home], engine.wi[away]
+        # Heimvorteil nur, wenn der Datensatz das Spiel als nicht-neutral markiert
+        # (Gastgeber-Heimspiele Mexico/USA/Canada in eigenen Staedten).
+        hfa = not bool(r["neutral"])
+        p_h, p_d, p_a, ml, p_ml = engine.predict(i, j, home_advantage=hfa)
+        rows.append({
+            "date": r["date"].date().isoformat(),
+            "home_team": home,
+            "away_team": away,
+            "home_advantage": hfa,
+            "p_home": p_h,
+            "p_draw": p_d,
+            "p_away": p_a,
+            "most_likely": f"{ml[0]}:{ml[1]}",
+            "p_most_likely": p_ml,
+        })
+    return pd.DataFrame(rows)

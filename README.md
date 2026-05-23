@@ -26,7 +26,8 @@ Pipeline bleibt identisch.
 wm2026/
 ├── README.md                              # diese Datei
 ├── requirements.txt                       # Python-Abhaengigkeiten
-├── forecast.yml                           # GitHub-Actions-Workflow (gehoert nach .github/workflows/)
+├── .github/workflows/
+│   └── forecast.yml                       # GitHub-Actions-Workflow (taegliche Live-Prognose)
 ├── .gitignore
 ├── data/                                  # Rohdaten (nicht im Git, s. .gitignore)
 │   └── results.csv                        # wird beim ersten Lauf automatisch gecached
@@ -36,13 +37,16 @@ wm2026/
 │   ├── 01_dixon_coles_baseline.ipynb      # Phase 1: Baseline-Modell + WM-2022-Backtest
 │   ├── 02_monte_carlo_simulation.ipynb    # Phase 2: 48-Team-Turnier-Simulation
 │   ├── 03_elo_model.ipynb                 # Phase 4: Elo-Engine als Ebene-A-Upgrade
-│   └── 04_live_update.ipynb               # Phase 3: Live-Schicht (Trockentest + Erklaerung)
+│   ├── 04_live_update.ipynb               # Phase 3: Live-Schicht (Trockentest + Erklaerung)
+│   └── 05_match_predictions.ipynb         # Pro-Spiel-Prognose (1/X/2 + wahrscheinlichstes Resultat, interaktiv)
 ├── src/                                   # geteilte Kernlogik (Notebook + Automatik)
-│   ├── wm_model.py                        # Elo + Tor-Modell + Gruppen + Simulation
+│   ├── wm_model.py                        # Elo + Tor-Modell + Gruppen + Simulation + Pro-Spiel-Prognose
 │   └── live_forecast.py                   # Headless-Skript fuer die taegliche Automatik
 └── output/                                # generierte Prognose (von der Automatik gepflegt)
-    ├── forecast.json                      # maschinenlesbar
-    └── forecast.md                        # Tabelle fuer Menschen
+    ├── forecast.json / forecast.md        # Titel-/Finale-/Halbfinal-Wahrscheinlichkeiten (Ebene C)
+    ├── matches.json  / matches.md         # Pro-Spiel-Prognose 1/X/2 + wahrscheinlichstes Resultat (Ebene A)
+    ├── history.csv                        # Zeitreihe der Titelchancen (eine Zeile je Team und Tag)
+    └── goal_coefs.json                    # gecachte Tor-Modell-Koeffizienten (vermeidet Re-Fit)
 ```
 
 ## Setup (conda)
@@ -82,16 +86,24 @@ Manuell starten:
 
 ```powershell
 $env:SPORTSDB_KEY = "3"          # "3" = kostenloser Test-Key
-python src/live_forecast.py      # schreibt output/forecast.{json,md}
+python src/live_forecast.py      # schreibt output/forecast.{json,md}, matches.{json,md}, history.csv
 ```
 
-Automatisch: `forecast.yml` ist ein **GitHub-Actions-Workflow**, der das Skript
-taeglich um 06:00 UTC laufen laesst und das Ergebnis zurueck ins Repo committet.
-Damit Actions den Workflow findet, muss die Datei nach `.github/workflows/forecast.yml`
-verschoben werden. API-Key in den Repo-Settings als Secret `SPORTSDB_KEY` hinterlegen.
+Pro Lauf entstehen vier Artefakte:
 
-Notebook 04 ist der interaktive Trockentest derselben Logik — beide nutzen
-`src/wm_model.py` als geteilte Engine.
+- `forecast.json` / `forecast.md` — Titel-/Finale-/Halbfinal-Wahrscheinlichkeiten (Ebene C)
+- `matches.json` / `matches.md` — Pro-Spiel-Prognose mit 1/X/2 + wahrscheinlichstem Resultat (Ebene A)
+- `history.csv` — Zeitreihe: pro Tag eine Zeile je Team, mehrfache Laeufe am selben UTC-Tag ueberschreiben sich
+- `goal_coefs.json` — Cache der Tor-Modell-Koeffizienten, damit nicht jeder Lauf neu fittet
+
+Automatisch: [`.github/workflows/forecast.yml`](.github/workflows/forecast.yml) ist
+ein **GitHub-Actions-Workflow**, der das Skript taeglich um 06:00 UTC laufen
+laesst und das Ergebnis zurueck ins Repo committet. API-Key in den Repo-Settings
+als Secret `SPORTSDB_KEY` hinterlegen.
+
+Notebook 04 ist der interaktive Trockentest derselben Live-Logik; Notebook 05
+zeigt die Pro-Spiel-Prognose mit Filtern (nach Team, Datum, „spannendste Spiele")
+— alle drei nutzen `src/wm_model.py` als geteilte Engine.
 
 ## Roadmap
 
