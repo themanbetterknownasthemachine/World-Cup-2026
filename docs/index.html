@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WM 2026 — Live-Prognose</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%BD%3C/text%3E%3C/svg%3E">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a2129;
+      --border: #2a3441;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --green: #3fb950;
+      --red: #f85149;
+      --yellow: #d29922;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.5;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; }
+    header { display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; margin-bottom: 8px; }
+    header h1 { margin: 0; font-size: 28px; font-weight: 600; }
+    header .stamp { color: var(--muted); font-size: 13px; margin-left: auto; }
+    .pulse {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .pulse-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .pulse-card .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .pulse-card .value { font-size: 28px; font-weight: 600; margin-top: 4px; }
+    .pulse-card .sub { color: var(--muted); font-size: 13px; }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    section h2 { margin: 0 0 4px; font-size: 18px; font-weight: 600; }
+    section .hint { color: var(--muted); font-size: 13px; margin: 0 0 16px; }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 24px 140px 1fr 60px;
+      gap: 10px;
+      align-items: center;
+      padding: 6px 0;
+    }
+    .bar-row .rank { color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+    .bar-track {
+      position: relative;
+      height: 22px;
+      background: #0d1117;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      background: linear-gradient(90deg, #1f6feb 0%, #58a6ff 100%);
+      transition: width .5s;
+    }
+    .bar-fill.finale { background: linear-gradient(90deg, #1f6feb55 0%, #58a6ff55 100%); }
+    .bar-fill.semi   { background: linear-gradient(90deg, #1f6feb22 0%, #58a6ff22 100%); }
+    .bar-row .pct { font-variant-numeric: tabular-nums; text-align: right; font-weight: 600; }
+    .legend { font-size: 12px; color: var(--muted); display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap; }
+    .legend span::before { content: ''; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+    .legend .l-titel::before { background: #58a6ff; }
+    .legend .l-finale::before { background: #58a6ff77; }
+    .legend .l-semi::before  { background: #58a6ff33; }
+    canvas { max-width: 100%; }
+    .match-card {
+      display: grid;
+      grid-template-columns: 90px 1fr 60px;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 0;
+      border-top: 1px solid var(--border);
+    }
+    .match-card:first-child { border-top: none; }
+    .match-card .date { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+    .match-card .teams { font-weight: 500; }
+    .match-card .teams .home-mark { color: var(--yellow); margin-left: 4px; }
+    .match-card .score-badge {
+      background: #0d1117;
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-variant-numeric: tabular-nums;
+      text-align: center;
+      color: var(--muted);
+    }
+    .wld-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 6px;
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+    }
+    .wld-bar div {
+      padding: 2px 4px;
+      text-align: center;
+      border-radius: 3px;
+    }
+    .wld-bar .h { background: #1f6feb44; }
+    .wld-bar .d { background: #6e768133; }
+    .wld-bar .a { background: #db61a244; }
+    .wld-bar .winner { outline: 2px solid var(--accent); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+    td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .badge {
+      display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 11px;
+      font-weight: 600;
+    }
+    .badge.ok { background: #3fb95033; color: var(--green); }
+    .badge.no { background: #f8514933; color: var(--red); }
+    .badge.upset { background: #d2992233; color: var(--yellow); margin-left: 4px; }
+    .movers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .movers .col h3 { margin: 0 0 8px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .mover-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      font-size: 14px;
+    }
+    .mover-row .delta { font-variant-numeric: tabular-nums; font-weight: 600; }
+    .mover-row .delta.up { color: var(--green); }
+    .mover-row .delta.down { color: var(--red); }
+    footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 32px; }
+    footer a { color: var(--muted); }
+    .empty { color: var(--muted); font-style: italic; padding: 16px 0; }
+    @media (max-width: 600px) {
+      .bar-row { grid-template-columns: 20px 100px 1fr 50px; gap: 6px; font-size: 13px; }
+      .match-card { grid-template-columns: 70px 1fr 56px; }
+      .movers { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>⚽ WM 2026 — Live-Prognose</h1>
+    <span class="stamp" id="stamp">Lade …</span>
+  </header>
+
+  <!-- 1. Pulse / Countdown -->
+  <div class="pulse" id="pulse"></div>
+
+  <!-- 2. Titel-Chancen Top 15 -->
+  <section>
+    <h2>Titel-Chancen — Top 15</h2>
+    <p class="hint">Wahrscheinlichkeit, das Turnier zu gewinnen / das Finale zu erreichen / das Halbfinale zu erreichen (aus 10 000 Monte-Carlo-Simulationen).</p>
+    <div id="topbars"></div>
+    <div class="legend">
+      <span class="l-titel">Titel</span>
+      <span class="l-finale">Finale</span>
+      <span class="l-semi">Halbfinale</span>
+    </div>
+  </section>
+
+  <!-- 3. Verlauf -->
+  <section>
+    <h2>Verlauf der Titel-Chancen — Top 6</h2>
+    <p class="hint">Tägliche Snapshots aus der Historie. Sobald Spiele laufen, sieht man hier live, wer steigt und wer fällt.</p>
+    <div style="height: 320px;">
+      <canvas id="history-chart"></canvas>
+    </div>
+  </section>
+
+  <!-- 4. Nächste Spiele -->
+  <section>
+    <h2>Nächste Spiele</h2>
+    <p class="hint">Die nächsten 8 angesetzten Partien. Balken: <strong>1</strong>/<strong>X</strong>/<strong>2</strong>-Wahrscheinlichkeit. <span style="color: var(--yellow)">⌂</span> = Heimspiel eines Gastgebers (Mexiko/USA/Kanada).</p>
+    <div id="upcoming"></div>
+  </section>
+
+  <!-- 5. Gespielte Spiele -->
+  <section>
+    <h2>Gespielte Spiele — Prognose vs. Realität</h2>
+    <p class="hint" id="results-hint">Sobald Spiele gespielt sind, erscheint hier das tatsächliche Resultat samt der Vorhersage, die das Modell vor Anpfiff abgegeben hatte.</p>
+    <div id="results"></div>
+  </section>
+
+  <!-- 6. Bewegungs-Spotlight -->
+  <section>
+    <h2>Bewegungs-Spotlight</h2>
+    <p class="hint">Wer hat seit gestern am meisten dazu- bzw. verloren? (Differenz der Titel-Chance gegenüber dem letzten Eintrag in der Historie.)</p>
+    <div class="movers" id="movers"></div>
+  </section>
+
+  <footer>
+    Automatisch täglich aktualisiert via GitHub Actions ·
+    <a href="https://github.com/" id="repo-link">Quellcode</a> ·
+    Daten von <a href="https://www.thesportsdb.com/">TheSportsDB</a>
+  </footer>
+</div>
+
+<script>
+const KICKOFF = new Date('2026-06-11T19:00:00Z');
+const DATA = './data';
+
+async function loadJSON(name) {
+  const r = await fetch(`${DATA}/${name}?t=${Date.now()}`);
+  if (!r.ok) throw new Error(`${name}: HTTP ${r.status}`);
+  return r.json();
+}
+async function loadCSV(name) {
+  const r = await fetch(`${DATA}/${name}?t=${Date.now()}`);
+  if (!r.ok) throw new Error(`${name}: HTTP ${r.status}`);
+  const text = await r.text();
+  return Papa.parse(text, { header: true, dynamicTyping: true, skipEmptyLines: true }).data;
+}
+const fmtPct = v => (v * 100).toFixed(1) + '%';
+const fmtPctShort = v => Math.round(v * 100) + '%';
+
+function renderPulse(forecast, results) {
+  const now = new Date();
+  const daysToKickoff = Math.ceil((KICKOFF - now) / (1000 * 60 * 60 * 24));
+  const status = daysToKickoff > 0
+    ? { label: 'Anpfiff in', value: `${daysToKickoff} Tage`, sub: '11.06.2026 · Mexiko vs. Südafrika · Estadio Azteca' }
+    : { label: 'Turnier läuft', value: `Spieltag ${Math.min(38, Math.ceil(-daysToKickoff / 1))}`, sub: 'Live-Daten von TheSportsDB' };
+  const top = forecast.forecast[0];
+  const pulse = [
+    status,
+    { label: 'Berücksichtigte Spiele', value: forecast.live_matches, sub: `von 104 insgesamt` },
+    { label: 'Favorit', value: top.Team, sub: `${fmtPct(top.Titel)} Titel-Chance` },
+    { label: 'Tendenz-Trefferquote', value: results.with_prediction > 0
+        ? `${Math.round(100 * results.correct / results.with_prediction)}%`
+        : '—',
+      sub: results.with_prediction > 0
+        ? `${results.correct} von ${results.with_prediction} richtig`
+        : 'noch keine Spiele' },
+  ];
+  document.getElementById('pulse').innerHTML = pulse.map(p => `
+    <div class="pulse-card">
+      <div class="label">${p.label}</div>
+      <div class="value">${p.value}</div>
+      <div class="sub">${p.sub}</div>
+    </div>`).join('');
+}
+
+function renderTopBars(forecast) {
+  const top = forecast.forecast.slice(0, 15);
+  document.getElementById('topbars').innerHTML = top.map((t, i) => `
+    <div class="bar-row">
+      <div class="rank">${i + 1}.</div>
+      <div>${t.Team}</div>
+      <div>
+        <div class="bar-track">
+          <div class="bar-fill semi" style="width: ${t.Halbfinale * 100}%"></div>
+          <div class="bar-fill finale" style="width: ${t.Finale * 100}%"></div>
+          <div class="bar-fill" style="width: ${t.Titel * 100}%"></div>
+        </div>
+      </div>
+      <div class="pct" title="Finale ${fmtPct(t.Finale)} · HF ${fmtPct(t.Halbfinale)}">${fmtPct(t.Titel)}</div>
+    </div>
+  `).join('');
+}
+
+function renderHistory(history, forecast) {
+  // Top 6 nach aktueller Titel-Chance
+  const topTeams = forecast.forecast.slice(0, 6).map(t => t.Team);
+  const dates = [...new Set(history.map(r => r.date))].sort();
+  const palette = ['#58a6ff', '#3fb950', '#f85149', '#d29922', '#bc8cff', '#39c5cf'];
+  const datasets = topTeams.map((team, i) => {
+    const byDate = Object.fromEntries(history.filter(r => r.team === team).map(r => [r.date, r.titel * 100]));
+    return {
+      label: team,
+      data: dates.map(d => byDate[d] ?? null),
+      borderColor: palette[i],
+      backgroundColor: palette[i] + '22',
+      tension: 0.25,
+      spanGaps: true,
+      pointRadius: dates.length > 30 ? 0 : 3,
+    };
+  });
+  new Chart(document.getElementById('history-chart'), {
+    type: 'line',
+    data: { labels: dates, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { color: '#e6edf3' } },
+        tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.parsed.y.toFixed(1)}%` } },
+      },
+      scales: {
+        x: { ticks: { color: '#8b949e' }, grid: { color: '#2a3441' } },
+        y: { ticks: { color: '#8b949e', callback: v => v + '%' }, grid: { color: '#2a3441' } },
+      },
+    },
+  });
+}
+
+function renderUpcoming(matches) {
+  const items = matches.matches.slice(0, 8);
+  if (!items.length) {
+    document.getElementById('upcoming').innerHTML = `<div class="empty">Keine offenen Spiele mehr.</div>`;
+    return;
+  }
+  document.getElementById('upcoming').innerHTML = items.map(m => {
+    const winner = ['p_home', 'p_draw', 'p_away'].reduce((a, k) => m[k] > m[a] ? k : a, 'p_home');
+    return `
+      <div class="match-card">
+        <div class="date">${m.date}</div>
+        <div>
+          <div class="teams">${m.home_team}${m.home_advantage ? '<span class="home-mark">⌂</span>' : ''} vs ${m.away_team}</div>
+          <div class="wld-bar">
+            <div class="h ${winner === 'p_home' ? 'winner' : ''}">1 · ${fmtPctShort(m.p_home)}</div>
+            <div class="d ${winner === 'p_draw' ? 'winner' : ''}">X · ${fmtPctShort(m.p_draw)}</div>
+            <div class="a ${winner === 'p_away' ? 'winner' : ''}">2 · ${fmtPctShort(m.p_away)}</div>
+          </div>
+        </div>
+        <div class="score-badge" title="Wahrscheinlichstes Resultat (${fmtPct(m.p_most_likely)})">${m.most_likely}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderResults(results) {
+  if (!results.results.length) {
+    document.getElementById('results').innerHTML = `<div class="empty">Noch kein WM-Spiel ausgetragen. Anpfiff: 11.06.2026.</div>`;
+    return;
+  }
+  // Neueste zuerst
+  const sorted = [...results.results].sort((a, b) => b.date.localeCompare(a.date));
+  document.getElementById('results').innerHTML = `
+    <table>
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>Spiel</th>
+          <th class="num">Resultat</th>
+          <th>Prognose vor Anpfiff</th>
+          <th>Tendenz</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${sorted.map(r => {
+          const p = r.prediction;
+          const predTxt = p
+            ? `<span style="color: var(--muted)">1 ${fmtPctShort(p.p_home)} · X ${fmtPctShort(p.p_draw)} · 2 ${fmtPctShort(p.p_away)} · likely ${p.most_likely}</span>`
+            : `<span class="empty" style="padding:0">—</span>`;
+          const badge = r.prediction_correct === true
+            ? `<span class="badge ok">✓</span>`
+            : r.prediction_correct === false
+              ? `<span class="badge no">✗</span>`
+              : '';
+          const upset = r.is_upset ? `<span class="badge upset">SCHOCK</span>` : '';
+          return `
+            <tr>
+              <td>${r.date}</td>
+              <td>${r.home_team} vs ${r.away_team}</td>
+              <td class="num"><strong>${r.score}</strong></td>
+              <td>${predTxt}</td>
+              <td>${badge}${upset}</td>
+            </tr>`;
+        }).join('')}
+      </tbody>
+    </table>
+  `;
+  document.getElementById('results-hint').textContent =
+    `${results.played} Spiele gespielt · Modell-Tendenz bei ${results.correct} von ${results.with_prediction} richtig.`;
+}
+
+function renderMovers(history) {
+  // Letztes vs vorletztes Datum in der Historie
+  const dates = [...new Set(history.map(r => r.date))].sort();
+  if (dates.length < 2) {
+    document.getElementById('movers').innerHTML = `<div class="empty" style="grid-column: 1 / -1">Mindestens zwei Tage Historie nötig — der erste Wert kommt automatisch beim nächsten Cron-Lauf.</div>`;
+    return;
+  }
+  const [d0, d1] = dates.slice(-2);
+  const prev = Object.fromEntries(history.filter(r => r.date === d0).map(r => [r.team, r.titel]));
+  const curr = history.filter(r => r.date === d1);
+  const deltas = curr
+    .filter(r => prev[r.team] !== undefined)
+    .map(r => ({ team: r.team, delta: r.titel - prev[r.team], curr: r.titel }))
+    .filter(r => Math.abs(r.delta) > 0.0005);
+  deltas.sort((a, b) => b.delta - a.delta);
+  const up = deltas.slice(0, 5);
+  const down = deltas.slice(-5).reverse();
+  const row = m => `
+    <div class="mover-row">
+      <span>${m.team} <span style="color: var(--muted); font-size: 12px">(${fmtPct(m.curr)})</span></span>
+      <span class="delta ${m.delta > 0 ? 'up' : 'down'}">${m.delta > 0 ? '+' : ''}${(m.delta * 100).toFixed(2)} pp</span>
+    </div>`;
+  document.getElementById('movers').innerHTML = `
+    <div class="col">
+      <h3>Gewinner</h3>
+      ${up.length ? up.map(row).join('') : '<div class="empty">Keine nennenswerten Veränderungen.</div>'}
+    </div>
+    <div class="col">
+      <h3>Verlierer</h3>
+      ${down.length ? down.map(row).join('') : '<div class="empty">Keine nennenswerten Veränderungen.</div>'}
+    </div>
+  `;
+}
+
+(async function main() {
+  try {
+    const [forecast, matches, results, history] = await Promise.all([
+      loadJSON('forecast.json'),
+      loadJSON('matches.json'),
+      loadJSON('results.json'),
+      loadCSV('history.csv'),
+    ]);
+    document.getElementById('stamp').textContent = `Stand: ${forecast.updated}`;
+    renderPulse(forecast, results);
+    renderTopBars(forecast);
+    renderHistory(history, forecast);
+    renderUpcoming(matches);
+    renderResults(results);
+    renderMovers(history);
+  } catch (e) {
+    document.querySelector('.wrap').insertAdjacentHTML('afterbegin',
+      `<div style="background: #f8514922; border: 1px solid var(--red); padding: 16px; border-radius: 8px; margin-bottom: 20px">
+        <strong>Daten konnten nicht geladen werden:</strong> ${e.message}<br>
+        <span style="color: var(--muted); font-size: 13px">Beim ersten Start: GitHub Actions muss einmal gelaufen sein, damit <code>docs/data/*.json</code> existiert.</span>
+      </div>`);
+    console.error(e);
+  }
+})();
+</script>
+</body>
+</html>

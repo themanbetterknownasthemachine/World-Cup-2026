@@ -32,7 +32,9 @@ wm2026/
 ├── data/                                  # Rohdaten (nicht im Git, s. .gitignore)
 │   └── results.csv                        # wird beim ersten Lauf automatisch gecached
 ├── docs/
-│   └── methodik.md                        # Theorie: Poisson, Dixon-Coles, RPS, Monte Carlo
+│   ├── methodik.md                        # Theorie: Poisson, Dixon-Coles, RPS, Monte Carlo
+│   ├── index.html                         # statisches Live-Dashboard (Chart.js + Vanilla JS)
+│   └── data/                              # Spiegel von output/ fuer GitHub Pages
 ├── notebooks/
 │   ├── 01_dixon_coles_baseline.ipynb      # Phase 1: Baseline-Modell + WM-2022-Backtest
 │   ├── 02_monte_carlo_simulation.ipynb    # Phase 2: 48-Team-Turnier-Simulation
@@ -45,6 +47,8 @@ wm2026/
 └── output/                                # generierte Prognose (von der Automatik gepflegt)
     ├── forecast.json / forecast.md        # Titel-/Finale-/Halbfinal-Wahrscheinlichkeiten (Ebene C)
     ├── matches.json  / matches.md         # Pro-Spiel-Prognose 1/X/2 + wahrscheinlichstes Resultat (Ebene A)
+    ├── results.json                       # gespielte Spiele + Pre-Match-Prognose (Dashboard-Vergleich)
+    ├── predictions_archive/               # eingefrorene Pre-Match-Snapshots pro Spieltag
     ├── history.csv                        # Zeitreihe der Titelchancen (eine Zeile je Team und Tag)
     └── goal_coefs.json                    # gecachte Tor-Modell-Koeffizienten (vermeidet Re-Fit)
 ```
@@ -85,8 +89,8 @@ werden in der Simulation fixiert, der Rest neu durchgewuerfelt.
 Manuell starten:
 
 ```powershell
-$env:SPORTSDB_KEY = "3"          # "3" = kostenloser Test-Key
-python src/live_forecast.py      # schreibt output/forecast.{json,md}, matches.{json,md}, history.csv
+$env:SPORTSDB_KEY = "DEIN_PATREON_KEY"   # ohne Key: Vorturnier-Prognose, mit Warnhinweis
+python src/live_forecast.py              # schreibt output/forecast.{json,md}, matches.{json,md}, history.csv
 ```
 
 Pro Lauf entstehen vier Artefakte:
@@ -104,6 +108,34 @@ als Secret `SPORTSDB_KEY` hinterlegen.
 Notebook 04 ist der interaktive Trockentest derselben Live-Logik; Notebook 05
 zeigt die Pro-Spiel-Prognose mit Filtern (nach Team, Datum, „spannendste Spiele")
 — alle drei nutzen `src/wm_model.py` als geteilte Engine.
+
+## Dashboard (GitHub Pages)
+
+`docs/index.html` ist ein statisches Single-Page-Dashboard, das die JSON-Artefakte
+direkt im Browser rendert — kein Server, kein Login, einfach bookmarken. Sektionen:
+
+- **Pulse** — Countdown bis Anpfiff, Anzahl beruecksichtigter Spiele, aktueller Favorit, Tendenz-Trefferquote des Modells
+- **Titel-Chancen Top 15** — gestaffelte Balken (Titel / Finale / Halbfinale)
+- **Verlauf Top 6** — Linienchart der Titel-Chance ueber alle bisherigen Cron-Laeufe (`history.csv`)
+- **Naechste 8 Spiele** — 1/X/2-Wahrscheinlichkeiten + wahrscheinlichstes Resultat
+- **Prognose vs. Realitaet** — gespielte Spiele mit dem Forecast, der vor Anpfiff im `predictions_archive/` eingefroren wurde, inklusive ✓/✗ und "SCHOCK"-Badge bei Underdog-Siegen
+- **Bewegungs-Spotlight** — Tagessieger/-verlierer in der Titel-Chance
+
+### Lokal anschauen
+
+```powershell
+python -m http.server 8765 -d docs
+# Browser: http://127.0.0.1:8765/
+```
+Reines `file://` funktioniert nicht (CORS auf `fetch`), deshalb der Mini-Server.
+
+### Auf GitHub Pages aktivieren (einmalig)
+
+1. Repo → **Settings → Pages**
+2. Source: **Deploy from a branch**
+3. Branch: `main` / Folder: `/docs` → **Save**
+4. Nach ein paar Minuten ist die Seite unter `https://<dein-user>.github.io/wm2026/` erreichbar
+5. Der taegliche Workflow spiegelt `output/*.json` + `history.csv` nach `docs/data/` und committet — das Dashboard ist also nach jedem 06:00-UTC-Lauf frisch
 
 ## Roadmap
 

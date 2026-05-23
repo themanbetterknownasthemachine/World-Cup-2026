@@ -27,10 +27,16 @@ jobs:
           SPORTSDB_KEY: ${{ secrets.SPORTSDB_KEY }}   # in Repo-Settings hinterlegen
         run: python src/live_forecast.py
 
+      - name: Output nach docs/data spiegeln (fuer GitHub Pages)
+        run: |
+          mkdir -p docs/data
+          cp output/forecast.json output/matches.json output/results.json docs/data/
+          cp output/history.csv docs/data/
+
       - name: Ergebnis committen
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/
+          git add output/ docs/data/
           git commit -m "Live-Prognose $(date -u +%Y-%m-%d)" || echo "Keine Aenderung"
           git push
