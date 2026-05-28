@@ -1,6 +1,6 @@
 # WM 2026 — Live-Prognose
 
-Stand: 2026-05-27 09:42 UTC · beruecksichtigte Spiele: 0
+Stand: 2026-05-28 09:58 UTC · beruecksichtigte Spiele: 0
 
 | # | Team | Titel | Finale | Halbfinale |
 |--:|------|------:|-------:|-----------:|
