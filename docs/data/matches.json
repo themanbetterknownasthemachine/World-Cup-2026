@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-28 09:58 UTC",
+  "updated": "2026-05-29 09:51 UTC",
   "live_matches": 0,
   "matches": [
     {
@@ -7,11 +7,11 @@
       "home_team": "Mexico",
       "away_team": "South Africa",
       "home_advantage": true,
-      "p_home": 0.8058975931778607,
-      "p_draw": 0.12710861574770535,
-      "p_away": 0.06699379107443376,
+      "p_home": 0.8058975931778608,
+      "p_draw": 0.12710861574770538,
+      "p_away": 0.06699379107443378,
       "most_likely": "2:0",
-      "p_most_likely": 0.12049028843036773
+      "p_most_likely": 0.12049028843036774
     },
     {
       "date": "2026-06-11",
@@ -117,11 +117,11 @@
       "home_team": "Netherlands",
       "away_team": "Japan",
       "home_advantage": false,
-      "p_home": 0.39491293848392595,
+      "p_home": 0.39491293848392583,
       "p_draw": 0.27700029994707565,
-      "p_away": 0.3280867615689984,
+      "p_away": 0.3280867615689985,
       "most_likely": "1:1",
-      "p_most_likely": 0.1305739187434916
+      "p_most_likely": 0.13057391874349172
     },
     {
       "date": "2026-06-14",
@@ -172,11 +172,11 @@
       "home_team": "Saudi Arabia",
       "away_team": "Uruguay",
       "home_advantage": false,
-      "p_home": 0.12008733927801452,
-      "p_draw": 0.19857568427245764,
-      "p_away": 0.6813369764495268,
+      "p_home": 0.12008733927801463,
+      "p_draw": 0.19857568427245786,
+      "p_away": 0.681336976449527,
       "most_likely": "0:2",
-      "p_most_likely": 0.13404185896903248
+      "p_most_likely": 0.13404185896903253
     },
     {
       "date": "2026-06-16",
@@ -216,11 +216,11 @@
       "home_team": "Austria",
       "away_team": "Jordan",
       "home_advantage": false,
-      "p_home": 0.47448610525811746,
-      "p_draw": 0.2666079527078929,
+      "p_home": 0.4744861052581175,
+      "p_draw": 0.26660795270789284,
       "p_away": 0.25890594203398964,
       "most_likely": "1:0",
-      "p_most_likely": 0.12754977165229048
+      "p_most_likely": 0.12754977165229045
     },
     {
       "date": "2026-06-17",
@@ -239,8 +239,8 @@
       "away_team": "Colombia",
       "home_advantage": false,
       "p_home": 0.16468428438680427,
-      "p_draw": 0.22943493271740434,
-      "p_away": 0.6058807828957914,
+      "p_draw": 0.22943493271740423,
+      "p_away": 0.6058807828957915,
       "most_likely": "0:1",
       "p_most_likely": 0.13560740740813632
     },
@@ -283,8 +283,8 @@
       "away_team": "South Korea",
       "home_advantage": true,
       "p_home": 0.5745453706358411,
-      "p_draw": 0.22348041160931276,
-      "p_away": 0.2019742177548461,
+      "p_draw": 0.22348041160931273,
+      "p_away": 0.20197421775484609,
       "most_likely": "1:1",
       "p_most_likely": 0.10562195780710806
     },
@@ -293,22 +293,22 @@
       "home_team": "Switzerland",
       "away_team": "Bosnia and Herzegovina",
       "home_advantage": false,
-      "p_home": 0.7011119897908814,
-      "p_draw": 0.18945228931043082,
+      "p_home": 0.7011119897908813,
+      "p_draw": 0.18945228931043087,
       "p_away": 0.10943572089868778,
       "most_likely": "2:0",
-      "p_most_likely": 0.137062162429041
+      "p_most_likely": 0.13706216242904107
     },
     {
       "date": "2026-06-18",
       "home_team": "Canada",
       "away_team": "Qatar",
       "home_advantage": true,
-      "p_home": 0.8237721858901983,
+      "p_home": 0.8237721858901984,
       "p_draw": 0.11732439470605661,
       "p_away": 0.05890341940374501,
       "most_likely": "2:0",
-      "p_most_likely": 0.11984538956083754
+      "p_most_likely": 0.11984538956083755
     },
     {
       "date": "2026-06-19",
@@ -316,10 +316,10 @@
       "away_team": "Morocco",
       "home_advantage": false,
       "p_home": 0.2031824659370574,
-      "p_draw": 0.24848673953828976,
+      "p_draw": 0.2484867395382898,
       "p_away": 0.5483307945246518,
       "most_likely": "0:1",
-      "p_most_likely": 0.133821279142008
+      "p_most_likely": 0.13382127914200798
     },
     {
       "date": "2026-06-19",
@@ -404,10 +404,10 @@
       "away_team": "Iran",
       "home_advantage": false,
       "p_home": 0.4242269832387957,
-      "p_draw": 0.27437830000938124,
+      "p_draw": 0.274378300009381,
       "p_away": 0.3013947167518233,
       "most_likely": "1:1",
-      "p_most_likely": 0.12933794605004928
+      "p_most_likely": 0.12933794605004922
     },
     {
       "date": "2026-06-21",
@@ -415,7 +415,7 @@
       "away_team": "Egypt",
       "home_advantage": false,
       "p_home": 0.298611008685346,
-      "p_draw": 0.2740093028471444,
+      "p_draw": 0.2740093028471445,
       "p_away": 0.42737968846750934,
       "most_likely": "1:1",
       "p_most_likely": 0.1291640061464186
@@ -425,9 +425,9 @@
       "home_team": "Spain",
       "away_team": "Saudi Arabia",
       "home_advantage": false,
-      "p_home": 0.8870672827288605,
-      "p_draw": 0.08382798706100694,
-      "p_away": 0.029104730210132178,
+      "p_home": 0.8870672827288607,
+      "p_draw": 0.08382798706100691,
+      "p_away": 0.029104730210132174,
       "most_likely": "3:0",
       "p_most_likely": 0.14219603224849464
     },
@@ -537,7 +537,7 @@
       "home_advantage": true,
       "p_home": 0.6869037044373073,
       "p_draw": 0.1838200860508891,
-      "p_away": 0.12927620951180352,
+      "p_away": 0.1292762095118035,
       "most_likely": "2:0",
       "p_most_likely": 0.11356294073844735
     },
@@ -592,9 +592,9 @@
       "home_advantage": false,
       "p_home": 0.6895551352098466,
       "p_draw": 0.1948349317284476,
-      "p_away": 0.11560993306170575,
+      "p_away": 0.1156099330617058,
       "most_likely": "2:0",
-      "p_most_likely": 0.13533443269345308
+      "p_most_likely": 0.13533443269345302
     },
     {
       "date": "2026-06-25",
@@ -624,21 +624,21 @@
       "away_team": "Ivory Coast",
       "home_advantage": false,
       "p_home": 0.18689545226768683,
-      "p_draw": 0.2411650815373464,
+      "p_draw": 0.2411650815373465,
       "p_away": 0.5719394661949668,
       "most_likely": "0:1",
-      "p_most_likely": 0.13490290799927512
+      "p_most_likely": 0.13490290799927518
     },
     {
       "date": "2026-06-25",
       "home_team": "Ecuador",
       "away_team": "Germany",
       "home_advantage": false,
-      "p_home": 0.3858509395361148,
-      "p_draw": 0.2775045304173424,
-      "p_away": 0.3366445300465425,
+      "p_home": 0.385850939536115,
+      "p_draw": 0.27750453041734235,
+      "p_away": 0.33664453004654243,
       "most_likely": "1:1",
-      "p_most_likely": 0.13081160566464384
+      "p_most_likely": 0.13081160566464378
     },
     {
       "date": "2026-06-25",
@@ -656,9 +656,9 @@
       "home_team": "Tunisia",
       "away_team": "Netherlands",
       "home_advantage": false,
-      "p_home": 0.12878684439595428,
-      "p_draw": 0.20547532048002143,
-      "p_away": 0.6657378351240247,
+      "p_home": 0.12878684439595411,
+      "p_draw": 0.2054753204800214,
+      "p_away": 0.6657378351240246,
       "most_likely": "0:1",
       "p_most_likely": 0.13418560829267195
     },
@@ -667,11 +667,11 @@
       "home_team": "Egypt",
       "away_team": "Iran",
       "home_advantage": false,
-      "p_home": 0.28034891082987523,
-      "p_draw": 0.2711147729350238,
-      "p_away": 0.4485363162351012,
+      "p_home": 0.2803489108298753,
+      "p_draw": 0.27111477293502373,
+      "p_away": 0.44853631623510115,
       "most_likely": "1:1",
-      "p_most_likely": 0.1277995667807641
+      "p_most_likely": 0.12779956678076415
     },
     {
       "date": "2026-06-26",
@@ -711,7 +711,7 @@
       "home_team": "Norway",
       "away_team": "France",
       "home_advantage": false,
-      "p_home": 0.18821696523942966,
+      "p_home": 0.18821696523942955,
       "p_draw": 0.24179767202209124,
       "p_away": 0.5699853627384788,
       "most_likely": "0:1",
@@ -790,7 +790,7 @@
       "home_advantage": false,
       "p_home": 0.7513685661058644,
       "p_draw": 0.1644141426852389,
-      "p_away": 0.08421729120889677,
+      "p_away": 0.08421729120889679,
       "most_likely": "2:0",
       "p_most_likely": 0.14308821507351482
     }
