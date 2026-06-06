@@ -1,6 +1,6 @@
 # WM 2026 — Pro-Spiel-Prognose
 
-Stand: 2026-06-05 09:43 UTC · noch offene Spiele: 72
+Stand: 2026-06-06 08:31 UTC · noch offene Spiele: 72
 
 Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 
@@ -8,11 +8,11 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 |---|---|---:|---:|---:|:--:|---:|
 | 2026-06-11 | Mexico ⌂ vs South Africa | 83% | 12% | 6% | 2:0 | 12.0% |
 | 2026-06-11 | South Korea vs Czech Republic | 45% | 27% | 28% | 1:1 | 12.7% |
-| 2026-06-12 | Canada ⌂ vs Bosnia and Herzegovina | 77% | 15% | 9% | 2:0 | 12.0% |
+| 2026-06-12 | Canada ⌂ vs Bosnia and Herzegovina | 76% | 15% | 9% | 2:0 | 12.0% |
 | 2026-06-12 | United States ⌂ vs Paraguay | 37% | 25% | 37% | 1:1 | 12.0% |
 | 2026-06-13 | Qatar vs Switzerland | 7% | 15% | 78% | 0:2 | 14.5% |
 | 2026-06-13 | Brazil vs Morocco | 45% | 27% | 28% | 1:1 | 12.8% |
-| 2026-06-13 | Haiti vs Scotland | 25% | 26% | 48% | 0:1 | 12.9% |
+| 2026-06-13 | Haiti vs Scotland | 24% | 26% | 49% | 0:1 | 13.0% |
 | 2026-06-13 | Australia vs Turkey | 30% | 27% | 42% | 1:1 | 12.9% |
 | 2026-06-14 | Germany vs Curaçao | 79% | 15% | 7% | 2:0 | 14.5% |
 | 2026-06-14 | Ivory Coast vs Ecuador | 17% | 23% | 59% | 0:1 | 13.5% |
@@ -33,9 +33,9 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 | 2026-06-18 | Czech Republic vs South Africa | 52% | 26% | 22% | 1:0 | 13.2% |
 | 2026-06-18 | Mexico ⌂ vs South Korea | 59% | 22% | 19% | 1:1 | 10.4% |
 | 2026-06-18 | Switzerland vs Bosnia and Herzegovina | 71% | 19% | 10% | 2:0 | 13.8% |
-| 2026-06-18 | Canada ⌂ vs Qatar | 83% | 11% | 5% | 2:0 | 11.9% |
+| 2026-06-18 | Canada ⌂ vs Qatar | 83% | 11% | 6% | 2:0 | 12.0% |
 | 2026-06-19 | Scotland vs Morocco | 21% | 25% | 54% | 0:1 | 13.4% |
-| 2026-06-19 | Brazil vs Haiti | 75% | 17% | 9% | 2:0 | 14.3% |
+| 2026-06-19 | Brazil vs Haiti | 76% | 16% | 8% | 2:0 | 14.4% |
 | 2026-06-19 | United States ⌂ vs Australia | 39% | 25% | 35% | 1:1 | 12.0% |
 | 2026-06-19 | Turkey vs Paraguay | 40% | 28% | 32% | 1:1 | 13.0% |
 | 2026-06-20 | Germany vs Ivory Coast | 57% | 24% | 19% | 1:0 | 13.5% |
@@ -44,7 +44,7 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 | 2026-06-20 | Tunisia vs Japan | 15% | 22% | 64% | 0:1 | 13.5% |
 | 2026-06-21 | Belgium vs Iran | 43% | 27% | 29% | 1:1 | 12.9% |
 | 2026-06-21 | New Zealand vs Egypt | 27% | 27% | 46% | 1:1 | 12.7% |
-| 2026-06-21 | Spain vs Saudi Arabia | 88% | 9% | 3% | 3:0 | 14.2% |
+| 2026-06-21 | Spain vs Saudi Arabia | 88% | 9% | 3% | 3:0 | 14.1% |
 | 2026-06-21 | Uruguay vs Cape Verde | 68% | 20% | 12% | 2:0 | 13.4% |
 | 2026-06-22 | France vs Iraq | 76% | 16% | 8% | 2:0 | 14.4% |
 | 2026-06-22 | Norway vs Senegal | 40% | 28% | 32% | 1:1 | 13.0% |
@@ -56,10 +56,10 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 | 2026-06-23 | Panama vs Croatia | 26% | 27% | 48% | 0:1 | 12.8% |
 | 2026-06-24 | Mexico ⌂ vs Czech Republic | 68% | 18% | 13% | 2:0 | 11.3% |
 | 2026-06-24 | South Africa vs South Korea | 16% | 23% | 61% | 0:1 | 13.6% |
-| 2026-06-24 | Canada ⌂ vs Switzerland | 40% | 25% | 35% | 1:1 | 12.0% |
+| 2026-06-24 | Canada ⌂ vs Switzerland | 39% | 25% | 35% | 1:1 | 12.0% |
 | 2026-06-24 | Bosnia and Herzegovina vs Qatar | 44% | 27% | 29% | 1:1 | 12.8% |
 | 2026-06-24 | Scotland vs Brazil | 15% | 22% | 63% | 0:1 | 13.5% |
-| 2026-06-24 | Morocco vs Haiti | 67% | 20% | 13% | 1:0 | 13.4% |
+| 2026-06-24 | Morocco vs Haiti | 68% | 20% | 12% | 1:0 | 13.3% |
 | 2026-06-25 | United States ⌂ vs Turkey | 33% | 25% | 42% | 1:1 | 11.9% |
 | 2026-06-25 | Paraguay vs Australia | 38% | 28% | 34% | 1:1 | 13.1% |
 | 2026-06-25 | Curaçao vs Ivory Coast | 17% | 23% | 60% | 0:1 | 13.6% |
