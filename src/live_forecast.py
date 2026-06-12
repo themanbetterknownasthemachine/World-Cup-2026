@@ -61,6 +61,12 @@ HOST_TEAMS = {"United States", "Canada", "Mexico"}
 # Per lookupleague.php?id=4429 verifiziert.
 WC_LEAGUE_ID = 4429
 
+# Wie viele Tage um das gemeldete Spieldatum herum nach der archivierten Pre-Match-
+# Prognose gesucht wird. TheSportsDB datiert Spiele teils einen Tag anders als der
+# Spielplan (spaete Anpfiffzeiten in US-Zeitzonen -> Datum kippt ueber Mitternacht UTC).
+# Ein Fenster von +/- 2 Tagen faengt das ab, ohne faelschlich ein anderes Spiel zu treffen.
+ARCHIVE_MATCH_WINDOW_DAYS = 2
+
 
 def fetch_live_results():
     """Gespielte WM-2026-Spiele von TheSportsDB holen. Bei jedem Problem -> []."""
@@ -121,24 +127,53 @@ def archive_pre_match_forecasts(matches_df, today):
         path.write_text(grp.to_json(orient="records"), encoding="utf-8")
 
 
+def find_archived_prediction(date, home_team, away_team):
+    """Suche die Pre-Match-Prognose eines Spiels teambasiert im Archiv.
+
+    Primaer wird die Datei zum gemeldeten Spieldatum durchsucht; findet sich dort
+    keine passende Begegnung (z. B. weil TheSportsDB das Spiel einen Tag anders
+    datiert als der Spielplan), wird in aufsteigender Datumsdistanz in den Nachbar-
+    tagen weitergesucht (Fenster ARCHIVE_MATCH_WINDOW_DAYS). Zurueck kommt die erste
+    passende Prognose oder None."""
+    try:
+        base = dt.date.fromisoformat(date)
+    except (ValueError, TypeError):
+        base = None
+
+    if base is None:
+        candidate_dates = [date]
+    else:
+        # Nach Naehe zum gemeldeten Datum sortiert: 0, -1, +1, -2, +2 ...
+        offsets = [0]
+        for d in range(1, ARCHIVE_MATCH_WINDOW_DAYS + 1):
+            offsets += [-d, d]
+        candidate_dates = [(base + dt.timedelta(days=o)).isoformat() for o in offsets]
+
+    for cand in candidate_dates:
+        arc_path = ARCHIVE / f"{cand}.json"
+        if not arc_path.exists():
+            continue
+        try:
+            records = json.loads(arc_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            print(f"[WARN] Archiv {arc_path.name} unlesbar ({e}).")
+            continue
+        for p in records:
+            if p["home_team"] == home_team and p["away_team"] == away_team:
+                if cand != date:
+                    print(
+                        f"[INFO] Prognose fuer {home_team} vs {away_team} im Nachbar-"
+                        f"archiv {cand}.json gefunden (Spiel gemeldet als {date})."
+                    )
+                return p
+    return None
+
+
 def build_results_payload(live):
     """Paare jedes gespielte Spiel mit seiner letzten archivierten Pre-Match-Prognose."""
     rows = []
     for m in live:
-        date = m["date"]
-        pred = None
-        arc_path = ARCHIVE / f"{date}.json"
-        if arc_path.exists():
-            try:
-                for p in json.loads(arc_path.read_text(encoding="utf-8")):
-                    if (
-                        p["home_team"] == m["home_team"]
-                        and p["away_team"] == m["away_team"]
-                    ):
-                        pred = p
-                        break
-            except Exception as e:
-                print(f"[WARN] Archiv {arc_path.name} unlesbar ({e}).")
+        pred = find_archived_prediction(m["date"], m["home_team"], m["away_team"])
         if m["home_score"] > m["away_score"]:
             winner = "home"
         elif m["away_score"] > m["home_score"]:
