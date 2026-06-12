@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-12 05:48 UTC",
+  "updated": "2026-06-12 10:08 UTC",
   "played": 2,
-  "with_prediction": 1,
-  "correct": 1,
+  "with_prediction": 2,
+  "correct": 2,
   "results": [
     {
       "date": "2026-06-11",
@@ -38,8 +38,18 @@
       "tournament": "FIFA World Cup",
       "winner": "home",
       "score": "2:1",
-      "prediction": null,
-      "prediction_correct": null,
+      "prediction": {
+        "date": "2026-06-11",
+        "home_team": "South Korea",
+        "away_team": "Czech Republic",
+        "home_advantage": false,
+        "p_home": 0.4527327497,
+        "p_draw": 0.2705133302,
+        "p_away": 0.2767539201,
+        "most_likely": "1:1",
+        "p_most_likely": 0.1275053664
+      },
+      "prediction_correct": true,
       "is_upset": false
     }
   ]

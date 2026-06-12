@@ -1,6 +1,6 @@
 # WM 2026 — Pro-Spiel-Prognose
 
-Stand: 2026-06-12 05:48 UTC · noch offene Spiele: 70
+Stand: 2026-06-12 10:08 UTC · noch offene Spiele: 70
 
 Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 
@@ -28,8 +28,8 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 | 2026-06-17 | Uzbekistan vs Colombia | 15% | 22% | 63% | 0:1 | 13.6% |
 | 2026-06-17 | England vs Croatia | 50% | 26% | 24% | 1:0 | 13.0% |
 | 2026-06-17 | Ghana vs Panama | 16% | 23% | 61% | 0:1 | 13.6% |
-| 2026-06-18 | Czech Republic vs South Africa | 49% | 26% | 25% | 1:0 | 12.9% |
-| 2026-06-18 | Mexico ⌂ vs South Korea | 57% | 23% | 21% | 1:1 | 10.6% |
+| 2026-06-18 | Czech Republic vs South Africa | 47% | 27% | 26% | 1:0 | 12.7% |
+| 2026-06-18 | Mexico ⌂ vs South Korea | 55% | 23% | 22% | 1:1 | 10.9% |
 | 2026-06-18 | Switzerland vs Bosnia and Herzegovina | 70% | 19% | 11% | 2:0 | 13.7% |
 | 2026-06-18 | Canada ⌂ vs Qatar | 83% | 11% | 6% | 2:0 | 11.9% |
 | 2026-06-19 | Scotland vs Morocco | 22% | 25% | 53% | 0:1 | 13.3% |
@@ -52,8 +52,8 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 | 2026-06-23 | Colombia vs DR Congo | 69% | 19% | 12% | 2:0 | 13.6% |
 | 2026-06-23 | England vs Ghana | 84% | 12% | 5% | 2:0 | 14.5% |
 | 2026-06-23 | Panama vs Croatia | 25% | 26% | 49% | 0:1 | 12.9% |
-| 2026-06-24 | Mexico ⌂ vs Czech Republic | 72% | 17% | 11% | 2:0 | 11.7% |
-| 2026-06-24 | South Africa vs South Korea | 15% | 22% | 64% | 0:1 | 13.5% |
+| 2026-06-24 | Mexico ⌂ vs Czech Republic | 74% | 16% | 10% | 2:0 | 11.8% |
+| 2026-06-24 | South Africa vs South Korea | 13% | 21% | 66% | 0:1 | 13.5% |
 | 2026-06-24 | Canada ⌂ vs Switzerland | 39% | 25% | 35% | 1:1 | 12.0% |
 | 2026-06-24 | Bosnia and Herzegovina vs Qatar | 45% | 27% | 28% | 1:1 | 12.8% |
 | 2026-06-24 | Scotland vs Brazil | 16% | 22% | 62% | 0:1 | 13.6% |
