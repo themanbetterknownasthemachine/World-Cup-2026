@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-12 10:08 UTC",
-  "played": 2,
-  "with_prediction": 2,
+  "updated": "2026-06-13 08:55 UTC",
+  "played": 4,
+  "with_prediction": 4,
   "correct": 2,
   "results": [
     {
@@ -50,6 +50,54 @@
         "p_most_likely": 0.1275053664
       },
       "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-12",
+      "home_team": "Canada",
+      "away_team": "Bosnia and Herzegovina",
+      "home_score": 1,
+      "away_score": 1,
+      "neutral": false,
+      "tournament": "FIFA World Cup",
+      "winner": "draw",
+      "score": "1:1",
+      "prediction": {
+        "date": "2026-06-12",
+        "home_team": "Canada",
+        "away_team": "Bosnia and Herzegovina",
+        "home_advantage": true,
+        "p_home": 0.7547953811,
+        "p_draw": 0.1532691484,
+        "p_away": 0.0919354705,
+        "most_likely": "2:0",
+        "p_most_likely": 0.1195008612
+      },
+      "prediction_correct": false,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-13",
+      "home_team": "United States",
+      "away_team": "Paraguay",
+      "home_score": 4,
+      "away_score": 1,
+      "neutral": false,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "4:1",
+      "prediction": {
+        "date": "2026-06-12",
+        "home_team": "United States",
+        "away_team": "Paraguay",
+        "home_advantage": true,
+        "p_home": 0.3630730736,
+        "p_draw": 0.2545013578,
+        "p_away": 0.3824255686,
+        "most_likely": "1:1",
+        "p_most_likely": 0.1202874798
+      },
+      "prediction_correct": false,
       "is_upset": false
     }
   ]
