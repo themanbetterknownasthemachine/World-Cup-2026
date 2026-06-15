@@ -1,15 +1,11 @@
 # WM 2026 — Pro-Spiel-Prognose
 
-Stand: 2026-06-14 09:30 UTC · noch offene Spiele: 64
+Stand: 2026-06-15 12:09 UTC · noch offene Spiele: 60
 
 Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 
 | Datum | Spiel | 1 | X | 2 | Wahrsch. Resultat | P |
 |---|---|---:|---:|---:|:--:|---:|
-| 2026-06-14 | Germany vs Curaçao | 79% | 14% | 7% | 2:0 | 14.6% |
-| 2026-06-14 | Ivory Coast vs Ecuador | 17% | 23% | 60% | 0:1 | 13.6% |
-| 2026-06-14 | Netherlands vs Japan | 38% | 28% | 34% | 1:1 | 13.1% |
-| 2026-06-14 | Sweden vs Tunisia | 39% | 28% | 33% | 1:1 | 13.1% |
 | 2026-06-15 | Belgium vs Egypt | 54% | 25% | 21% | 1:0 | 13.3% |
 | 2026-06-15 | Iran vs New Zealand | 56% | 25% | 20% | 1:0 | 13.4% |
 | 2026-06-15 | Spain vs Cape Verde | 90% | 7% | 2% | 3:0 | 14.4% |
@@ -30,10 +26,10 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 | 2026-06-19 | Brazil vs Haiti | 78% | 15% | 7% | 2:0 | 14.5% |
 | 2026-06-19 | United States ⌂ vs Australia | 38% | 25% | 37% | 1:1 | 12.0% |
 | 2026-06-19 | Turkey vs Paraguay | 40% | 28% | 32% | 1:1 | 13.0% |
-| 2026-06-20 | Germany vs Ivory Coast | 57% | 24% | 19% | 1:0 | 13.5% |
-| 2026-06-20 | Ecuador vs Curaçao | 81% | 13% | 6% | 2:0 | 14.6% |
-| 2026-06-20 | Netherlands vs Sweden | 63% | 22% | 15% | 1:0 | 13.5% |
-| 2026-06-20 | Tunisia vs Japan | 14% | 22% | 64% | 0:1 | 13.5% |
+| 2026-06-20 | Germany vs Ivory Coast | 54% | 25% | 21% | 1:0 | 13.3% |
+| 2026-06-20 | Ecuador vs Curaçao | 78% | 15% | 7% | 2:0 | 14.5% |
+| 2026-06-20 | Netherlands vs Sweden | 53% | 25% | 21% | 1:0 | 13.3% |
+| 2026-06-20 | Tunisia vs Japan | 9% | 17% | 74% | 0:2 | 14.2% |
 | 2026-06-21 | Belgium vs Iran | 44% | 27% | 29% | 1:1 | 12.8% |
 | 2026-06-21 | New Zealand vs Egypt | 27% | 27% | 46% | 1:1 | 12.7% |
 | 2026-06-21 | Spain vs Saudi Arabia | 88% | 9% | 3% | 3:0 | 14.1% |
@@ -54,10 +50,10 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 | 2026-06-24 | Morocco vs Haiti | 72% | 18% | 10% | 2:0 | 14.0% |
 | 2026-06-25 | United States ⌂ vs Turkey | 52% | 24% | 24% | 1:1 | 11.2% |
 | 2026-06-25 | Paraguay vs Australia | 21% | 25% | 54% | 0:1 | 13.3% |
-| 2026-06-25 | Curaçao vs Ivory Coast | 17% | 23% | 60% | 0:1 | 13.6% |
-| 2026-06-25 | Ecuador vs Germany | 38% | 28% | 34% | 1:1 | 13.1% |
-| 2026-06-25 | Japan vs Sweden | 61% | 23% | 16% | 1:0 | 13.6% |
-| 2026-06-25 | Tunisia vs Netherlands | 13% | 21% | 66% | 0:1 | 13.4% |
+| 2026-06-25 | Curaçao vs Ivory Coast | 13% | 21% | 66% | 0:1 | 13.5% |
+| 2026-06-25 | Ecuador vs Germany | 32% | 28% | 40% | 1:1 | 13.0% |
+| 2026-06-25 | Japan vs Sweden | 52% | 26% | 23% | 1:0 | 13.2% |
+| 2026-06-25 | Tunisia vs Netherlands | 8% | 16% | 75% | 0:2 | 14.3% |
 | 2026-06-26 | Egypt vs Iran | 27% | 27% | 46% | 1:1 | 12.7% |
 | 2026-06-26 | New Zealand vs Belgium | 14% | 22% | 64% | 0:1 | 13.5% |
 | 2026-06-26 | Cape Verde vs Saudi Arabia | 32% | 28% | 40% | 1:1 | 13.0% |
