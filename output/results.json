@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-15 12:09 UTC",
-  "played": 12,
-  "with_prediction": 12,
+  "updated": "2026-06-16 11:07 UTC",
+  "played": 16,
+  "with_prediction": 16,
   "correct": 5,
   "results": [
     {
@@ -270,6 +270,78 @@
     },
     {
       "date": "2026-06-15",
+      "home_team": "Belgium",
+      "away_team": "Egypt",
+      "home_score": 1,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "draw",
+      "score": "1:1",
+      "prediction": {
+        "date": "2026-06-15",
+        "home_team": "Belgium",
+        "away_team": "Egypt",
+        "home_advantage": false,
+        "p_home": 0.5389082347,
+        "p_draw": 0.2512589138,
+        "p_away": 0.2098328515,
+        "most_likely": "1:0",
+        "p_most_likely": 0.1333415274
+      },
+      "prediction_correct": false,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-15",
+      "home_team": "Saudi Arabia",
+      "away_team": "Uruguay",
+      "home_score": 1,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "draw",
+      "score": "1:1",
+      "prediction": {
+        "date": "2026-06-15",
+        "home_team": "Saudi Arabia",
+        "away_team": "Uruguay",
+        "home_advantage": false,
+        "p_home": 0.1248094672,
+        "p_draw": 0.2024404431,
+        "p_away": 0.6727500897,
+        "most_likely": "0:1",
+        "p_most_likely": 0.133861345
+      },
+      "prediction_correct": false,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-15",
+      "home_team": "Spain",
+      "away_team": "Cape Verde",
+      "home_score": 0,
+      "away_score": 0,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "draw",
+      "score": "0:0",
+      "prediction": {
+        "date": "2026-06-15",
+        "home_team": "Spain",
+        "away_team": "Cape Verde",
+        "home_advantage": false,
+        "p_home": 0.9005122849,
+        "p_draw": 0.0747937877,
+        "p_away": 0.0246939274,
+        "most_likely": "3:0",
+        "p_most_likely": 0.1437606163
+      },
+      "prediction_correct": false,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-15",
       "home_team": "Sweden",
       "away_team": "Tunisia",
       "home_score": 5,
@@ -290,6 +362,30 @@
         "p_most_likely": 0.1307499843
       },
       "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-16",
+      "home_team": "Iran",
+      "away_team": "New Zealand",
+      "home_score": 2,
+      "away_score": 2,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "draw",
+      "score": "2:2",
+      "prediction": {
+        "date": "2026-06-15",
+        "home_team": "Iran",
+        "away_team": "New Zealand",
+        "home_advantage": false,
+        "p_home": 0.5583600363,
+        "p_draw": 0.2455092337,
+        "p_away": 0.19613073,
+        "most_likely": "1:0",
+        "p_most_likely": 0.134420725
+      },
+      "prediction_correct": false,
       "is_upset": false
     }
   ]

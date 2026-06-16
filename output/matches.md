@@ -1,15 +1,11 @@
 # WM 2026 — Pro-Spiel-Prognose
 
-Stand: 2026-06-15 12:09 UTC · noch offene Spiele: 60
+Stand: 2026-06-16 11:07 UTC · noch offene Spiele: 56
 
 Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 
 | Datum | Spiel | 1 | X | 2 | Wahrsch. Resultat | P |
 |---|---|---:|---:|---:|:--:|---:|
-| 2026-06-15 | Belgium vs Egypt | 54% | 25% | 21% | 1:0 | 13.3% |
-| 2026-06-15 | Iran vs New Zealand | 56% | 25% | 20% | 1:0 | 13.4% |
-| 2026-06-15 | Spain vs Cape Verde | 90% | 7% | 2% | 3:0 | 14.4% |
-| 2026-06-15 | Saudi Arabia vs Uruguay | 12% | 20% | 67% | 0:1 | 13.4% |
 | 2026-06-16 | France vs Senegal | 59% | 23% | 17% | 1:0 | 13.6% |
 | 2026-06-16 | Iraq vs Norway | 17% | 23% | 60% | 0:1 | 13.6% |
 | 2026-06-16 | Argentina vs Algeria | 70% | 19% | 11% | 2:0 | 13.6% |
@@ -32,8 +28,8 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 | 2026-06-20 | Tunisia vs Japan | 9% | 17% | 74% | 0:2 | 14.2% |
 | 2026-06-21 | Belgium vs Iran | 44% | 27% | 29% | 1:1 | 12.8% |
 | 2026-06-21 | New Zealand vs Egypt | 27% | 27% | 46% | 1:1 | 12.7% |
-| 2026-06-21 | Spain vs Saudi Arabia | 88% | 9% | 3% | 3:0 | 14.1% |
-| 2026-06-21 | Uruguay vs Cape Verde | 71% | 18% | 10% | 2:0 | 13.9% |
+| 2026-06-21 | Spain vs Saudi Arabia | 84% | 11% | 4% | 2:0 | 14.4% |
+| 2026-06-21 | Uruguay vs Cape Verde | 66% | 21% | 13% | 1:0 | 13.4% |
 | 2026-06-22 | France vs Iraq | 77% | 15% | 7% | 2:0 | 14.5% |
 | 2026-06-22 | Norway vs Senegal | 41% | 28% | 32% | 1:1 | 13.0% |
 | 2026-06-22 | Argentina vs Austria | 69% | 20% | 12% | 2:0 | 13.5% |
@@ -54,10 +50,10 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 | 2026-06-25 | Ecuador vs Germany | 32% | 28% | 40% | 1:1 | 13.0% |
 | 2026-06-25 | Japan vs Sweden | 52% | 26% | 23% | 1:0 | 13.2% |
 | 2026-06-25 | Tunisia vs Netherlands | 8% | 16% | 75% | 0:2 | 14.3% |
-| 2026-06-26 | Egypt vs Iran | 27% | 27% | 46% | 1:1 | 12.7% |
-| 2026-06-26 | New Zealand vs Belgium | 14% | 22% | 64% | 0:1 | 13.5% |
-| 2026-06-26 | Cape Verde vs Saudi Arabia | 32% | 28% | 40% | 1:1 | 13.0% |
-| 2026-06-26 | Uruguay vs Spain | 15% | 22% | 62% | 0:1 | 13.6% |
+| 2026-06-26 | Egypt vs Iran | 30% | 27% | 43% | 1:1 | 12.9% |
+| 2026-06-26 | New Zealand vs Belgium | 16% | 23% | 61% | 0:1 | 13.6% |
+| 2026-06-26 | Cape Verde vs Saudi Arabia | 33% | 28% | 39% | 1:1 | 13.1% |
+| 2026-06-26 | Uruguay vs Spain | 16% | 23% | 61% | 0:1 | 13.6% |
 | 2026-06-26 | Norway vs France | 21% | 25% | 54% | 0:1 | 13.4% |
 | 2026-06-26 | Senegal vs Iraq | 56% | 25% | 20% | 1:0 | 13.4% |
 | 2026-06-27 | Algeria vs Austria | 35% | 28% | 37% | 1:1 | 13.1% |
