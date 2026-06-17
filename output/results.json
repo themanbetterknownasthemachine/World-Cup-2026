@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-16 11:07 UTC",
-  "played": 16,
-  "with_prediction": 16,
-  "correct": 5,
+  "updated": "2026-06-17 10:52 UTC",
+  "played": 20,
+  "with_prediction": 20,
+  "correct": 9,
   "results": [
     {
       "date": "2026-06-11",
@@ -386,6 +386,102 @@
         "p_most_likely": 0.134420725
       },
       "prediction_correct": false,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-16",
+      "home_team": "France",
+      "away_team": "Senegal",
+      "home_score": 3,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "3:1",
+      "prediction": {
+        "date": "2026-06-16",
+        "home_team": "France",
+        "away_team": "Senegal",
+        "home_advantage": false,
+        "p_home": 0.5912574573,
+        "p_draw": 0.2347022781,
+        "p_away": 0.1740402645,
+        "most_likely": "1:0",
+        "p_most_likely": 0.1355141
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-16",
+      "home_team": "Iraq",
+      "away_team": "Norway",
+      "home_score": 1,
+      "away_score": 4,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "away",
+      "score": "1:4",
+      "prediction": {
+        "date": "2026-06-16",
+        "home_team": "Iraq",
+        "away_team": "Norway",
+        "home_advantage": false,
+        "p_home": 0.1663946552,
+        "p_draw": 0.2304809253,
+        "p_away": 0.6031244195,
+        "most_likely": "0:1",
+        "p_most_likely": 0.1356728789
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-17",
+      "home_team": "Argentina",
+      "away_team": "Algeria",
+      "home_score": 3,
+      "away_score": 0,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "3:0",
+      "prediction": {
+        "date": "2026-06-16",
+        "home_team": "Argentina",
+        "away_team": "Algeria",
+        "home_advantage": false,
+        "p_home": 0.6954987992,
+        "p_draw": 0.1921157901,
+        "p_away": 0.1123854107,
+        "most_likely": "2:0",
+        "p_most_likely": 0.1362897174
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-17",
+      "home_team": "Austria",
+      "away_team": "Jordan",
+      "home_score": 3,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "3:1",
+      "prediction": {
+        "date": "2026-06-16",
+        "home_team": "Austria",
+        "away_team": "Jordan",
+        "home_advantage": false,
+        "p_home": 0.4914431798,
+        "p_draw": 0.2631735767,
+        "p_away": 0.2453832435,
+        "most_likely": "1:0",
+        "p_most_likely": 0.1294383566
+      },
+      "prediction_correct": true,
       "is_upset": false
     }
   ]
