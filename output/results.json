@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-17 10:52 UTC",
-  "played": 20,
-  "with_prediction": 20,
-  "correct": 9,
+  "updated": "2026-06-18 10:18 UTC",
+  "played": 24,
+  "with_prediction": 24,
+  "correct": 11,
   "results": [
     {
       "date": "2026-06-11",
@@ -480,6 +480,102 @@
         "p_away": 0.2453832435,
         "most_likely": "1:0",
         "p_most_likely": 0.1294383566
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-17",
+      "home_team": "England",
+      "away_team": "Croatia",
+      "home_score": 4,
+      "away_score": 2,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "4:2",
+      "prediction": {
+        "date": "2026-06-17",
+        "home_team": "England",
+        "away_team": "Croatia",
+        "home_advantage": false,
+        "p_home": 0.495543552,
+        "p_draw": 0.2622673949,
+        "p_away": 0.242189053,
+        "most_likely": "1:0",
+        "p_most_likely": 0.129844133
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-17",
+      "home_team": "Ghana",
+      "away_team": "Panama",
+      "home_score": 1,
+      "away_score": 0,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "1:0",
+      "prediction": {
+        "date": "2026-06-17",
+        "home_team": "Ghana",
+        "away_team": "Panama",
+        "home_advantage": false,
+        "p_home": 0.1626052549,
+        "p_draw": 0.2282904608,
+        "p_away": 0.6091042843,
+        "most_likely": "0:1",
+        "p_most_likely": 0.1357038281
+      },
+      "prediction_correct": false,
+      "is_upset": true
+    },
+    {
+      "date": "2026-06-17",
+      "home_team": "Portugal",
+      "away_team": "DR Congo",
+      "home_score": 1,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "draw",
+      "score": "1:1",
+      "prediction": {
+        "date": "2026-06-17",
+        "home_team": "Portugal",
+        "away_team": "DR Congo",
+        "home_advantage": false,
+        "p_home": 0.6572884472,
+        "p_draw": 0.2091373033,
+        "p_away": 0.1335742495,
+        "most_likely": "1:0",
+        "p_most_likely": 0.1346906239
+      },
+      "prediction_correct": false,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-18",
+      "home_team": "Uzbekistan",
+      "away_team": "Colombia",
+      "home_score": 1,
+      "away_score": 3,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "away",
+      "score": "1:3",
+      "prediction": {
+        "date": "2026-06-17",
+        "home_team": "Uzbekistan",
+        "away_team": "Colombia",
+        "home_advantage": false,
+        "p_home": 0.1501438613,
+        "p_draw": 0.2206029758,
+        "p_away": 0.6292531629,
+        "most_likely": "0:1",
+        "p_most_likely": 0.1355590896
       },
       "prediction_correct": true,
       "is_upset": false
