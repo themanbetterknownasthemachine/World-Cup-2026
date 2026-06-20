@@ -1,15 +1,11 @@
 # WM 2026 — Pro-Spiel-Prognose
 
-Stand: 2026-06-19 10:23 UTC · noch offene Spiele: 44
+Stand: 2026-06-20 08:52 UTC · noch offene Spiele: 40
 
 Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 
 | Datum | Spiel | 1 | X | 2 | Wahrsch. Resultat | P |
 |---|---|---:|---:|---:|:--:|---:|
-| 2026-06-19 | Scotland vs Morocco | 24% | 26% | 50% | 0:1 | 13.0% |
-| 2026-06-19 | Brazil vs Haiti | 78% | 15% | 7% | 2:0 | 14.5% |
-| 2026-06-19 | United States ⌂ vs Australia | 38% | 25% | 37% | 1:1 | 12.0% |
-| 2026-06-19 | Turkey vs Paraguay | 40% | 28% | 32% | 1:1 | 13.0% |
 | 2026-06-20 | Germany vs Ivory Coast | 54% | 25% | 21% | 1:0 | 13.3% |
 | 2026-06-20 | Ecuador vs Curaçao | 78% | 15% | 7% | 2:0 | 14.5% |
 | 2026-06-20 | Netherlands vs Sweden | 53% | 25% | 21% | 1:0 | 13.3% |
@@ -30,10 +26,10 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 | 2026-06-24 | South Africa vs South Korea | 16% | 23% | 61% | 0:1 | 13.6% |
 | 2026-06-24 | Canada ⌂ vs Switzerland | 39% | 25% | 36% | 1:1 | 12.0% |
 | 2026-06-24 | Bosnia and Herzegovina vs Qatar | 44% | 27% | 29% | 1:1 | 12.8% |
-| 2026-06-24 | Scotland vs Brazil | 19% | 24% | 57% | 0:1 | 13.5% |
-| 2026-06-24 | Morocco vs Haiti | 72% | 18% | 10% | 2:0 | 14.0% |
-| 2026-06-25 | United States ⌂ vs Turkey | 52% | 24% | 24% | 1:1 | 11.2% |
-| 2026-06-25 | Paraguay vs Australia | 21% | 25% | 54% | 0:1 | 13.3% |
+| 2026-06-24 | Scotland vs Brazil | 16% | 23% | 62% | 0:1 | 13.6% |
+| 2026-06-24 | Morocco vs Haiti | 76% | 16% | 8% | 2:0 | 14.4% |
+| 2026-06-25 | United States ⌂ vs Turkey | 65% | 20% | 15% | 2:0 | 10.8% |
+| 2026-06-25 | Paraguay vs Australia | 30% | 27% | 42% | 1:1 | 12.9% |
 | 2026-06-25 | Curaçao vs Ivory Coast | 13% | 21% | 66% | 0:1 | 13.5% |
 | 2026-06-25 | Ecuador vs Germany | 32% | 28% | 40% | 1:1 | 13.0% |
 | 2026-06-25 | Japan vs Sweden | 52% | 26% | 23% | 1:0 | 13.2% |
