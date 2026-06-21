@@ -1,15 +1,11 @@
 # WM 2026 — Pro-Spiel-Prognose
 
-Stand: 2026-06-20 08:52 UTC · noch offene Spiele: 40
+Stand: 2026-06-21 09:46 UTC · noch offene Spiele: 36
 
 Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 
 | Datum | Spiel | 1 | X | 2 | Wahrsch. Resultat | P |
 |---|---|---:|---:|---:|:--:|---:|
-| 2026-06-20 | Germany vs Ivory Coast | 54% | 25% | 21% | 1:0 | 13.3% |
-| 2026-06-20 | Ecuador vs Curaçao | 78% | 15% | 7% | 2:0 | 14.5% |
-| 2026-06-20 | Netherlands vs Sweden | 53% | 25% | 21% | 1:0 | 13.3% |
-| 2026-06-20 | Tunisia vs Japan | 9% | 17% | 74% | 0:2 | 14.2% |
 | 2026-06-21 | Belgium vs Iran | 45% | 27% | 27% | 1:1 | 12.7% |
 | 2026-06-21 | New Zealand vs Egypt | 28% | 27% | 44% | 1:1 | 12.8% |
 | 2026-06-21 | Spain vs Saudi Arabia | 84% | 11% | 4% | 2:0 | 14.4% |
@@ -30,10 +26,10 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 | 2026-06-24 | Morocco vs Haiti | 76% | 16% | 8% | 2:0 | 14.4% |
 | 2026-06-25 | United States ⌂ vs Turkey | 65% | 20% | 15% | 2:0 | 10.8% |
 | 2026-06-25 | Paraguay vs Australia | 30% | 27% | 42% | 1:1 | 12.9% |
-| 2026-06-25 | Curaçao vs Ivory Coast | 13% | 21% | 66% | 0:1 | 13.5% |
-| 2026-06-25 | Ecuador vs Germany | 32% | 28% | 40% | 1:1 | 13.0% |
-| 2026-06-25 | Japan vs Sweden | 52% | 26% | 23% | 1:0 | 13.2% |
-| 2026-06-25 | Tunisia vs Netherlands | 8% | 16% | 75% | 0:2 | 14.3% |
+| 2026-06-25 | Curaçao vs Ivory Coast | 18% | 24% | 59% | 0:1 | 13.5% |
+| 2026-06-25 | Ecuador vs Germany | 26% | 27% | 47% | 0:1 | 12.7% |
+| 2026-06-25 | Japan vs Sweden | 58% | 24% | 18% | 1:0 | 13.5% |
+| 2026-06-25 | Tunisia vs Netherlands | 6% | 14% | 80% | 0:2 | 14.6% |
 | 2026-06-26 | Egypt vs Iran | 31% | 28% | 41% | 1:1 | 13.0% |
 | 2026-06-26 | New Zealand vs Belgium | 17% | 23% | 60% | 0:1 | 13.6% |
 | 2026-06-26 | Cape Verde vs Saudi Arabia | 33% | 28% | 39% | 1:1 | 13.1% |
