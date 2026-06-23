@@ -1,15 +1,11 @@
 # WM 2026 — Pro-Spiel-Prognose
 
-Stand: 2026-06-22 11:49 UTC · noch offene Spiele: 32
+Stand: 2026-06-23 09:35 UTC · noch offene Spiele: 28
 
 Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 
 | Datum | Spiel | 1 | X | 2 | Wahrsch. Resultat | P |
 |---|---|---:|---:|---:|:--:|---:|
-| 2026-06-22 | France vs Iraq | 81% | 13% | 6% | 2:0 | 14.6% |
-| 2026-06-22 | Norway vs Senegal | 46% | 27% | 27% | 1:1 | 12.7% |
-| 2026-06-22 | Argentina vs Austria | 66% | 21% | 13% | 1:0 | 13.5% |
-| 2026-06-22 | Jordan vs Algeria | 23% | 26% | 51% | 0:1 | 13.1% |
 | 2026-06-23 | Portugal vs Uzbekistan | 61% | 23% | 16% | 1:0 | 13.6% |
 | 2026-06-23 | Colombia vs DR Congo | 70% | 19% | 11% | 2:0 | 13.8% |
 | 2026-06-23 | England vs Ghana | 82% | 12% | 5% | 2:0 | 14.6% |
@@ -30,10 +26,10 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 | 2026-06-26 | New Zealand vs Belgium | 13% | 21% | 66% | 0:1 | 13.5% |
 | 2026-06-26 | Cape Verde vs Saudi Arabia | 36% | 28% | 37% | 1:1 | 13.1% |
 | 2026-06-26 | Uruguay vs Spain | 14% | 21% | 64% | 0:1 | 13.5% |
-| 2026-06-26 | Norway vs France | 21% | 25% | 54% | 0:1 | 13.3% |
-| 2026-06-26 | Senegal vs Iraq | 56% | 25% | 20% | 1:0 | 13.4% |
-| 2026-06-27 | Algeria vs Austria | 27% | 27% | 46% | 1:1 | 12.7% |
-| 2026-06-27 | Jordan vs Argentina | 4% | 10% | 86% | 0:2 | 14.2% |
+| 2026-06-26 | Norway vs France | 22% | 26% | 52% | 0:1 | 13.2% |
+| 2026-06-26 | Senegal vs Iraq | 54% | 25% | 21% | 1:0 | 13.4% |
+| 2026-06-27 | Algeria vs Austria | 30% | 27% | 42% | 1:1 | 12.9% |
+| 2026-06-27 | Jordan vs Argentina | 3% | 9% | 89% | 0:3 | 14.2% |
 | 2026-06-27 | Colombia vs Portugal | 45% | 27% | 28% | 1:1 | 12.8% |
 | 2026-06-27 | DR Congo vs Uzbekistan | 36% | 28% | 37% | 1:1 | 13.1% |
 | 2026-06-27 | Panama vs England | 11% | 19% | 71% | 0:2 | 13.8% |
