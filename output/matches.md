@@ -1,15 +1,11 @@
 # WM 2026 — Pro-Spiel-Prognose
 
-Stand: 2026-06-23 09:35 UTC · noch offene Spiele: 28
+Stand: 2026-06-24 09:25 UTC · noch offene Spiele: 24
 
 Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 
 | Datum | Spiel | 1 | X | 2 | Wahrsch. Resultat | P |
 |---|---|---:|---:|---:|:--:|---:|
-| 2026-06-23 | Portugal vs Uzbekistan | 61% | 23% | 16% | 1:0 | 13.6% |
-| 2026-06-23 | Colombia vs DR Congo | 70% | 19% | 11% | 2:0 | 13.8% |
-| 2026-06-23 | England vs Ghana | 82% | 12% | 5% | 2:0 | 14.6% |
-| 2026-06-23 | Panama vs Croatia | 23% | 26% | 51% | 0:1 | 13.1% |
 | 2026-06-24 | Mexico ⌂ vs Czech Republic | 78% | 14% | 8% | 2:0 | 12.0% |
 | 2026-06-24 | South Africa vs South Korea | 16% | 23% | 61% | 0:1 | 13.6% |
 | 2026-06-24 | Canada ⌂ vs Switzerland | 39% | 25% | 36% | 1:1 | 12.0% |
@@ -26,11 +22,11 @@ Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 | 2026-06-26 | New Zealand vs Belgium | 13% | 21% | 66% | 0:1 | 13.5% |
 | 2026-06-26 | Cape Verde vs Saudi Arabia | 36% | 28% | 37% | 1:1 | 13.1% |
 | 2026-06-26 | Uruguay vs Spain | 14% | 21% | 64% | 0:1 | 13.5% |
-| 2026-06-26 | Norway vs France | 22% | 26% | 52% | 0:1 | 13.2% |
-| 2026-06-26 | Senegal vs Iraq | 54% | 25% | 21% | 1:0 | 13.4% |
-| 2026-06-27 | Algeria vs Austria | 30% | 27% | 42% | 1:1 | 12.9% |
-| 2026-06-27 | Jordan vs Argentina | 3% | 9% | 89% | 0:3 | 14.2% |
-| 2026-06-27 | Colombia vs Portugal | 45% | 27% | 28% | 1:1 | 12.8% |
-| 2026-06-27 | DR Congo vs Uzbekistan | 36% | 28% | 37% | 1:1 | 13.1% |
-| 2026-06-27 | Panama vs England | 11% | 19% | 71% | 0:2 | 13.8% |
-| 2026-06-27 | Croatia vs Ghana | 65% | 21% | 14% | 1:0 | 13.5% |
+| 2026-06-26 | Norway vs France | 24% | 26% | 50% | 0:1 | 13.1% |
+| 2026-06-26 | Senegal vs Iraq | 52% | 26% | 22% | 1:0 | 13.2% |
+| 2026-06-27 | Algeria vs Austria | 32% | 28% | 41% | 1:1 | 13.0% |
+| 2026-06-27 | Jordan vs Argentina | 3% | 8% | 89% | 0:3 | 14.3% |
+| 2026-06-27 | Colombia vs Portugal | 44% | 27% | 29% | 1:1 | 12.8% |
+| 2026-06-27 | DR Congo vs Uzbekistan | 37% | 28% | 36% | 1:1 | 13.1% |
+| 2026-06-27 | Panama vs England | 11% | 19% | 70% | 0:2 | 13.7% |
+| 2026-06-27 | Croatia vs Ghana | 64% | 21% | 14% | 1:0 | 13.5% |
