@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-26 09:21 UTC",
-  "played": 60,
-  "with_prediction": 57,
-  "correct": 34,
+  "updated": "2026-06-27 08:33 UTC",
+  "played": 66,
+  "with_prediction": 63,
+  "correct": 38,
   "results": [
     {
       "date": "2026-06-11",
@@ -1402,6 +1402,30 @@
     },
     {
       "date": "2026-06-26",
+      "home_team": "Norway",
+      "away_team": "France",
+      "home_score": 1,
+      "away_score": 4,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "away",
+      "score": "1:4",
+      "prediction": {
+        "date": "2026-06-26",
+        "home_team": "Norway",
+        "away_team": "France",
+        "home_advantage": false,
+        "p_home": 0.2364410754,
+        "p_draw": 0.2605583484,
+        "p_away": 0.5030005762,
+        "most_likely": "0:1",
+        "p_most_likely": 0.1305494844
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-26",
       "home_team": "Turkey",
       "away_team": "United States",
       "home_score": 3,
@@ -1412,6 +1436,126 @@
       "score": "3:2",
       "prediction": null,
       "prediction_correct": null,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-26",
+      "home_team": "Senegal",
+      "away_team": "Iraq",
+      "home_score": 5,
+      "away_score": 0,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "5:0",
+      "prediction": {
+        "date": "2026-06-26",
+        "home_team": "Senegal",
+        "away_team": "Iraq",
+        "home_advantage": false,
+        "p_home": 0.5203917008,
+        "p_draw": 0.2562721716,
+        "p_away": 0.2233361276,
+        "most_likely": "1:0",
+        "p_most_likely": 0.1320284761
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-27",
+      "home_team": "Cape Verde",
+      "away_team": "Saudi Arabia",
+      "home_score": 0,
+      "away_score": 0,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "draw",
+      "score": "0:0",
+      "prediction": {
+        "date": "2026-06-26",
+        "home_team": "Cape Verde",
+        "away_team": "Saudi Arabia",
+        "home_advantage": false,
+        "p_home": 0.3568258246,
+        "p_draw": 0.2781494309,
+        "p_away": 0.3650247445,
+        "most_likely": "1:1",
+        "p_most_likely": 0.1311046117
+      },
+      "prediction_correct": false,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-27",
+      "home_team": "Egypt",
+      "away_team": "Iran",
+      "home_score": 1,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "draw",
+      "score": "1:1",
+      "prediction": {
+        "date": "2026-06-26",
+        "home_team": "Egypt",
+        "away_team": "Iran",
+        "home_advantage": false,
+        "p_home": 0.3674972096,
+        "p_draw": 0.2781235735,
+        "p_away": 0.3543792169,
+        "most_likely": "1:1",
+        "p_most_likely": 0.1310924239
+      },
+      "prediction_correct": false,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-27",
+      "home_team": "New Zealand",
+      "away_team": "Belgium",
+      "home_score": 1,
+      "away_score": 5,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "away",
+      "score": "1:5",
+      "prediction": {
+        "date": "2026-06-26",
+        "home_team": "New Zealand",
+        "away_team": "Belgium",
+        "home_advantage": false,
+        "p_home": 0.1342626974,
+        "p_draw": 0.209644015,
+        "p_away": 0.6560932876,
+        "most_likely": "0:1",
+        "p_most_likely": 0.1347441128
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-27",
+      "home_team": "Uruguay",
+      "away_team": "Spain",
+      "home_score": 0,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "away",
+      "score": "0:1",
+      "prediction": {
+        "date": "2026-06-26",
+        "home_team": "Uruguay",
+        "away_team": "Spain",
+        "home_advantage": false,
+        "p_home": 0.1414221966,
+        "p_draw": 0.2147542012,
+        "p_away": 0.6438236022,
+        "most_likely": "0:1",
+        "p_most_likely": 0.1352073869
+      },
+      "prediction_correct": true,
       "is_upset": false
     }
   ]
