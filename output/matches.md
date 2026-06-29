@@ -1,12 +1,11 @@
 # WM 2026 — Pro-Spiel-Prognose
 
-Stand: 2026-06-28 08:48 UTC · noch offene Spiele: 16
+Stand: 2026-06-29 10:53 UTC · noch offene Spiele: 15
 
 Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 
 | Datum | Spiel | 1 | X | 2 | Wahrsch. Resultat | P |
 |---|---|---:|---:|---:|:--:|---:|
-| 2026-06-28 | South Africa vs Canada | 28% | 27% | 45% | 1:1 | 12.8% |
 | 2026-06-29 | Brazil vs Japan | 47% | 27% | 27% | 1:0 | 12.7% |
 | 2026-06-29 | Germany vs Paraguay | 47% | 27% | 27% | 1:0 | 12.7% |
 | 2026-06-29 | Netherlands vs Morocco | 39% | 28% | 33% | 1:1 | 13.1% |

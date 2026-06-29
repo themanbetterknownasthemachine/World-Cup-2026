@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-28 08:48 UTC",
-  "played": 72,
-  "with_prediction": 69,
-  "correct": 42,
+  "updated": "2026-06-29 10:53 UTC",
+  "played": 73,
+  "with_prediction": 70,
+  "correct": 43,
   "results": [
     {
       "date": "2026-06-11",
@@ -1698,6 +1698,30 @@
         "p_away": 0.8948802623,
         "most_likely": "0:3",
         "p_most_likely": 0.1432150252
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-28",
+      "home_team": "South Africa",
+      "away_team": "Canada",
+      "home_score": 0,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "away",
+      "score": "0:1",
+      "prediction": {
+        "date": "2026-06-28",
+        "home_team": "South Africa",
+        "away_team": "Canada",
+        "home_advantage": false,
+        "p_home": 0.2802462725,
+        "p_draw": 0.2711642908,
+        "p_away": 0.4485894367,
+        "most_likely": "1:1",
+        "p_most_likely": 0.1278121941
       },
       "prediction_correct": true,
       "is_upset": false

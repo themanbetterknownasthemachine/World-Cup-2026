@@ -1,182 +1,171 @@
 {
-  "updated": "2026-06-28 08:48 UTC",
-  "live_matches": 72,
+  "updated": "2026-06-29 10:53 UTC",
+  "live_matches": 73,
   "matches": [
-    {
-      "date": "2026-06-28",
-      "home_team": "South Africa",
-      "away_team": "Canada",
-      "home_advantage": false,
-      "p_home": 0.28024627253678813,
-      "p_draw": 0.271164290789456,
-      "p_away": 0.4485894366737558,
-      "most_likely": "1:1",
-      "p_most_likely": 0.12781219409457478
-    },
     {
       "date": "2026-06-29",
       "home_team": "Brazil",
       "away_team": "Japan",
       "home_advantage": false,
-      "p_home": 0.46627127298175197,
-      "p_draw": 0.2682014289214791,
-      "p_away": 0.265527298096769,
+      "p_home": 0.46627236268299815,
+      "p_draw": 0.26820123159473597,
+      "p_away": 0.26552640572226627,
       "most_likely": "1:0",
-      "p_most_likely": 0.12667373123984327
+      "p_most_likely": 0.12667386096001315
     },
     {
       "date": "2026-06-29",
       "home_team": "Germany",
       "away_team": "Paraguay",
       "home_advantage": false,
-      "p_home": 0.4661680428873473,
-      "p_draw": 0.2682201140453725,
-      "p_away": 0.2656118430672804,
+      "p_home": 0.46616844958135284,
+      "p_draw": 0.26822004046343834,
+      "p_away": 0.2656115099552086,
       "most_likely": "1:0",
-      "p_most_likely": 0.12666143863367246
+      "p_most_likely": 0.12666148707778155
     },
     {
       "date": "2026-06-29",
       "home_team": "Netherlands",
       "away_team": "Morocco",
       "home_advantage": false,
-      "p_home": 0.39200559847227073,
-      "p_draw": 0.2772406292214424,
-      "p_away": 0.3307537723062868,
+      "p_home": 0.39200222549864094,
+      "p_draw": 0.2772408271142657,
+      "p_away": 0.3307569473870934,
       "most_likely": "1:1",
-      "p_most_likely": 0.13067625169151104
+      "p_most_likely": 0.13067634496749464
     },
     {
       "date": "2026-06-30",
       "home_team": "Ivory Coast",
       "away_team": "Norway",
       "home_advantage": false,
-      "p_home": 0.2419923869710658,
-      "p_draw": 0.2622105931795377,
-      "p_away": 0.4957970198493964,
+      "p_home": 0.24199594603883529,
+      "p_draw": 0.2622116221660397,
+      "p_away": 0.49579243179512456,
       "most_likely": "0:1",
-      "p_most_likely": 0.12986880051128674
+      "p_most_likely": 0.1298683544328696
     },
     {
       "date": "2026-06-30",
       "home_team": "France",
       "away_team": "Sweden",
       "home_advantage": false,
-      "p_home": 0.739241622285185,
-      "p_draw": 0.17072230616511927,
-      "p_away": 0.09003607154969555,
+      "p_home": 0.7392412278642444,
+      "p_draw": 0.17072250805626382,
+      "p_away": 0.09003626407949195,
       "most_likely": "2:0",
-      "p_most_likely": 0.14194480612956772
+      "p_most_likely": 0.14194476412858997
     },
     {
       "date": "2026-06-30",
       "home_team": "Mexico",
       "away_team": "Ecuador",
       "home_advantage": true,
-      "p_home": 0.557922739257458,
-      "p_draw": 0.22813803029925514,
-      "p_away": 0.2139392304432868,
+      "p_home": 0.5579225648298995,
+      "p_draw": 0.22813807720284643,
+      "p_away": 0.21393935796725386,
       "most_likely": "1:1",
-      "p_most_likely": 0.10782712107826657
+      "p_most_likely": 0.10782714324677223
     },
     {
       "date": "2026-07-01",
       "home_team": "England",
       "away_team": "DR Congo",
       "home_advantage": false,
-      "p_home": 0.6838064908133503,
-      "p_draw": 0.19749195327797453,
-      "p_away": 0.11870155590867543,
+      "p_home": 0.6838022303542319,
+      "p_draw": 0.19749388554044012,
+      "p_away": 0.11870388410532783,
       "most_likely": "2:0",
-      "p_most_likely": 0.13448737908187836
+      "p_most_likely": 0.13448670319464306
     },
     {
       "date": "2026-07-01",
       "home_team": "Belgium",
       "away_team": "Senegal",
       "home_advantage": false,
-      "p_home": 0.4699650886186665,
-      "p_draw": 0.2675222752931395,
-      "p_away": 0.2625126360881944,
+      "p_home": 0.46996237580064304,
+      "p_draw": 0.26752278159384396,
+      "p_away": 0.26251484260551294,
       "most_likely": "1:0",
-      "p_most_likely": 0.12710850969643117
+      "p_most_likely": 0.12710819401894616
     },
     {
       "date": "2026-07-01",
       "home_team": "United States",
       "away_team": "Bosnia and Herzegovina",
       "home_advantage": true,
-      "p_home": 0.6899874014714342,
-      "p_draw": 0.18255140575395848,
-      "p_away": 0.1274611927746075,
+      "p_home": 0.6899882742384676,
+      "p_draw": 0.1825510410068348,
+      "p_away": 0.12746068475469752,
       "most_likely": "2:0",
-      "p_most_likely": 0.11394202215827916
+      "p_most_likely": 0.11394212053983221
     },
     {
       "date": "2026-07-02",
       "home_team": "Spain",
       "away_team": "Austria",
       "home_advantage": false,
-      "p_home": 0.6757142198211117,
-      "p_draw": 0.20112677535735884,
-      "p_away": 0.12315900482153024,
+      "p_home": 0.6757138563289802,
+      "p_draw": 0.2011269370373917,
+      "p_away": 0.12315920663362805,
       "most_likely": "1:0",
-      "p_most_likely": 0.13367272460760968
+      "p_most_likely": 0.1336727483328452
     },
     {
       "date": "2026-07-02",
       "home_team": "Portugal",
       "away_team": "Croatia",
       "home_advantage": false,
-      "p_home": 0.4469718874583921,
-      "p_draw": 0.2714111253169962,
-      "p_away": 0.28161698722461104,
+      "p_home": 0.44697158348185284,
+      "p_draw": 0.27141117131618014,
+      "p_away": 0.28161724520196696,
       "most_likely": "1:1",
-      "p_most_likely": 0.12792853855295222
+      "p_most_likely": 0.127928560234482
     },
     {
       "date": "2026-07-02",
       "home_team": "Switzerland",
       "away_team": "Algeria",
       "home_advantage": false,
-      "p_home": 0.4812862711233131,
-      "p_draw": 0.26531417377528305,
-      "p_away": 0.2533995551014032,
+      "p_home": 0.480146188320522,
+      "p_draw": 0.26554509483198596,
+      "p_away": 0.254308716847492,
       "most_likely": "1:0",
-      "p_most_likely": 0.12837904903194866
+      "p_most_likely": 0.12825536424224168
     },
     {
       "date": "2026-07-03",
       "home_team": "Australia",
       "away_team": "Egypt",
       "home_advantage": false,
-      "p_home": 0.4218201166431772,
-      "p_draw": 0.2747088810444901,
-      "p_away": 0.3034710023123329,
+      "p_home": 0.4218163936474311,
+      "p_draw": 0.2747092924072383,
+      "p_away": 0.3034743139453302,
       "most_likely": "1:1",
-      "p_most_likely": 0.12948292240597292
+      "p_most_likely": 0.12948311630014414
     },
     {
       "date": "2026-07-03",
       "home_team": "Argentina",
       "away_team": "Cape Verde",
       "home_advantage": false,
-      "p_home": 0.890142671176907,
-      "p_draw": 0.0817871645324529,
-      "p_away": 0.028070164290640305,
+      "p_home": 0.8901407451504353,
+      "p_draw": 0.08178845223677861,
+      "p_away": 0.028070802612785932,
       "most_likely": "3:0",
-      "p_most_likely": 0.1426507887771955
+      "p_most_likely": 0.1426505413885233
     },
     {
       "date": "2026-07-03",
       "home_team": "Colombia",
       "away_team": "Ghana",
       "home_advantage": false,
-      "p_home": 0.8035722769553983,
-      "p_draw": 0.13567327254254957,
-      "p_away": 0.060754450502051686,
+      "p_home": 0.8035685293138055,
+      "p_draw": 0.1356754373101465,
+      "p_away": 0.06075603337604791,
       "most_likely": "2:0",
-      "p_most_likely": 0.14585843400039056
+      "p_most_likely": 0.14585841259222182
     }
   ]
 }
