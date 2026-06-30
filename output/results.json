@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-29 10:53 UTC",
-  "played": 73,
-  "with_prediction": 70,
-  "correct": 43,
+  "updated": "2026-06-30 09:30 UTC",
+  "played": 76,
+  "with_prediction": 73,
+  "correct": 44,
   "results": [
     {
       "date": "2026-06-11",
@@ -1724,6 +1724,78 @@
         "p_most_likely": 0.1278121941
       },
       "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-29",
+      "home_team": "Brazil",
+      "away_team": "Japan",
+      "home_score": 2,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "2:1",
+      "prediction": {
+        "date": "2026-06-29",
+        "home_team": "Brazil",
+        "away_team": "Japan",
+        "home_advantage": false,
+        "p_home": 0.4662723627,
+        "p_draw": 0.2682012316,
+        "p_away": 0.2655264057,
+        "most_likely": "1:0",
+        "p_most_likely": 0.126673861
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-29",
+      "home_team": "Germany",
+      "away_team": "Paraguay",
+      "home_score": 1,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "draw",
+      "score": "1:1",
+      "prediction": {
+        "date": "2026-06-29",
+        "home_team": "Germany",
+        "away_team": "Paraguay",
+        "home_advantage": false,
+        "p_home": 0.4661684496,
+        "p_draw": 0.2682200405,
+        "p_away": 0.26561151,
+        "most_likely": "1:0",
+        "p_most_likely": 0.1266614871
+      },
+      "prediction_correct": false,
+      "is_upset": false
+    },
+    {
+      "date": "2026-06-30",
+      "home_team": "Netherlands",
+      "away_team": "Morocco",
+      "home_score": 1,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "draw",
+      "score": "1:1",
+      "prediction": {
+        "date": "2026-06-29",
+        "home_team": "Netherlands",
+        "away_team": "Morocco",
+        "home_advantage": false,
+        "p_home": 0.3920022255,
+        "p_draw": 0.2772408271,
+        "p_away": 0.3307569474,
+        "most_likely": "1:1",
+        "p_most_likely": 0.130676345
+      },
+      "prediction_correct": false,
       "is_upset": false
     }
   ]
