@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-01 09:41 UTC",
-  "played": 79,
-  "with_prediction": 76,
-  "correct": 47,
+  "updated": "2026-07-02 08:52 UTC",
+  "played": 82,
+  "with_prediction": 79,
+  "correct": 50,
   "results": [
     {
       "date": "2026-06-11",
@@ -1866,6 +1866,78 @@
         "p_away": 0.213938442,
         "most_likely": "1:1",
         "p_most_likely": 0.107826984
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-01",
+      "home_team": "England",
+      "away_team": "DR Congo",
+      "home_score": 2,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "2:1",
+      "prediction": {
+        "date": "2026-07-01",
+        "home_team": "England",
+        "away_team": "DR Congo",
+        "home_advantage": false,
+        "p_home": 0.6838123128,
+        "p_draw": 0.1974893128,
+        "p_away": 0.1186983744,
+        "most_likely": "2:0",
+        "p_most_likely": 0.1344883027
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-01",
+      "home_team": "Belgium",
+      "away_team": "Senegal",
+      "home_score": 3,
+      "away_score": 2,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "3:2",
+      "prediction": {
+        "date": "2026-07-01",
+        "home_team": "Belgium",
+        "away_team": "Senegal",
+        "home_advantage": false,
+        "p_home": 0.4699691722,
+        "p_draw": 0.2675215131,
+        "p_away": 0.2625093147,
+        "most_likely": "1:0",
+        "p_most_likely": 0.1271089849
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-02",
+      "home_team": "United States",
+      "away_team": "Bosnia and Herzegovina",
+      "home_score": 2,
+      "away_score": 0,
+      "neutral": false,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "2:0",
+      "prediction": {
+        "date": "2026-07-01",
+        "home_team": "United States",
+        "away_team": "Bosnia and Herzegovina",
+        "home_advantage": true,
+        "p_home": 0.6899845646,
+        "p_draw": 0.1825525913,
+        "p_away": 0.127462844,
+        "most_likely": "2:0",
+        "p_most_likely": 0.1139417024
       },
       "prediction_correct": true,
       "is_upset": false
