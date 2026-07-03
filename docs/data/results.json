@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-02 08:52 UTC",
-  "played": 82,
-  "with_prediction": 79,
-  "correct": 50,
+  "updated": "2026-07-03 08:59 UTC",
+  "played": 85,
+  "with_prediction": 82,
+  "correct": 53,
   "results": [
     {
       "date": "2026-06-11",
@@ -1938,6 +1938,78 @@
         "p_away": 0.127462844,
         "most_likely": "2:0",
         "p_most_likely": 0.1139417024
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-02",
+      "home_team": "Portugal",
+      "away_team": "Croatia",
+      "home_score": 2,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "2:1",
+      "prediction": {
+        "date": "2026-07-02",
+        "home_team": "Portugal",
+        "away_team": "Croatia",
+        "home_advantage": false,
+        "p_home": 0.4469718762,
+        "p_draw": 0.271411127,
+        "p_away": 0.2816169968,
+        "most_likely": "1:1",
+        "p_most_likely": 0.1279285394
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-02",
+      "home_team": "Spain",
+      "away_team": "Austria",
+      "home_score": 3,
+      "away_score": 0,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "3:0",
+      "prediction": {
+        "date": "2026-07-02",
+        "home_team": "Spain",
+        "away_team": "Austria",
+        "home_advantage": false,
+        "p_home": 0.6757136528,
+        "p_draw": 0.2011270276,
+        "p_away": 0.1231593196,
+        "most_likely": "1:0",
+        "p_most_likely": 0.1336727616
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-03",
+      "home_team": "Switzerland",
+      "away_team": "Algeria",
+      "home_score": 2,
+      "away_score": 0,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "2:0",
+      "prediction": {
+        "date": "2026-07-02",
+        "home_team": "Switzerland",
+        "away_team": "Algeria",
+        "home_advantage": false,
+        "p_home": 0.4801461941,
+        "p_draw": 0.2655450937,
+        "p_away": 0.2543087122,
+        "most_likely": "1:0",
+        "p_most_likely": 0.1282553649
       },
       "prediction_correct": true,
       "is_upset": false

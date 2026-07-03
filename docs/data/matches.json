@@ -1,40 +1,7 @@
 {
-  "updated": "2026-07-02 08:52 UTC",
-  "live_matches": 82,
+  "updated": "2026-07-03 08:59 UTC",
+  "live_matches": 85,
   "matches": [
-    {
-      "date": "2026-07-02",
-      "home_team": "Spain",
-      "away_team": "Austria",
-      "home_advantage": false,
-      "p_home": 0.6757136528215734,
-      "p_draw": 0.2011270275567142,
-      "p_away": 0.12315931962171249,
-      "most_likely": "1:0",
-      "p_most_likely": 0.1336727616157681
-    },
-    {
-      "date": "2026-07-02",
-      "home_team": "Portugal",
-      "away_team": "Croatia",
-      "home_advantage": false,
-      "p_home": 0.44697187618789297,
-      "p_draw": 0.2714111270225047,
-      "p_away": 0.28161699678960206,
-      "most_likely": "1:1",
-      "p_most_likely": 0.12792853935683673
-    },
-    {
-      "date": "2026-07-02",
-      "home_team": "Switzerland",
-      "away_team": "Algeria",
-      "home_advantage": false,
-      "p_home": 0.48014619412108617,
-      "p_draw": 0.26554509366193624,
-      "p_away": 0.25430871221697754,
-      "most_likely": "1:0",
-      "p_most_likely": 0.12825536487397152
-    },
     {
       "date": "2026-07-03",
       "home_team": "Australia",
@@ -73,11 +40,11 @@
       "home_team": "Canada",
       "away_team": "Morocco",
       "home_advantage": false,
-      "p_home": 0.2033936026355666,
-      "p_draw": 0.24864292513441372,
-      "p_away": 0.5479634722300197,
+      "p_home": 0.20265620103144139,
+      "p_draw": 0.2483337276216115,
+      "p_away": 0.5490100713469471,
       "most_likely": "0:1",
-      "p_most_likely": 0.13388282108790833
+      "p_most_likely": 0.13394103976768384
     },
     {
       "date": "2026-07-04",
@@ -111,6 +78,17 @@
       "p_away": 0.30896621523902057,
       "most_likely": "1:1",
       "p_most_likely": 0.11852071047324111
+    },
+    {
+      "date": "2026-07-06",
+      "home_team": "Portugal",
+      "away_team": "Spain",
+      "home_advantage": false,
+      "p_home": 0.2098746333001577,
+      "p_draw": 0.25127540179950014,
+      "p_away": 0.5388499649003422,
+      "most_likely": "0:1",
+      "p_most_likely": 0.1333378274312175
     },
     {
       "date": "2026-07-06",
