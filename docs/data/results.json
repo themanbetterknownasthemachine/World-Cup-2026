@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-03 08:59 UTC",
-  "played": 85,
-  "with_prediction": 82,
-  "correct": 53,
+  "updated": "2026-07-04 06:15 UTC",
+  "played": 88,
+  "with_prediction": 85,
+  "correct": 55,
   "results": [
     {
       "date": "2026-06-11",
@@ -1992,6 +1992,54 @@
     },
     {
       "date": "2026-07-03",
+      "home_team": "Australia",
+      "away_team": "Egypt",
+      "home_score": 1,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "draw",
+      "score": "1:1",
+      "prediction": {
+        "date": "2026-07-03",
+        "home_team": "Australia",
+        "away_team": "Egypt",
+        "home_advantage": false,
+        "p_home": 0.4218195402,
+        "p_draw": 0.2747089447,
+        "p_away": 0.3034715151,
+        "most_likely": "1:1",
+        "p_most_likely": 0.1294829524
+      },
+      "prediction_correct": false,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-03",
+      "home_team": "Argentina",
+      "away_team": "Cape Verde",
+      "home_score": 3,
+      "away_score": 2,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "3:2",
+      "prediction": {
+        "date": "2026-07-03",
+        "home_team": "Argentina",
+        "away_team": "Cape Verde",
+        "home_advantage": false,
+        "p_home": 0.8901409902,
+        "p_draw": 0.0817882884,
+        "p_away": 0.0280707214,
+        "most_likely": "3:0",
+        "p_most_likely": 0.1426505729
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-03",
       "home_team": "Switzerland",
       "away_team": "Algeria",
       "home_score": 2,
@@ -2010,6 +2058,30 @@
         "p_away": 0.2543087122,
         "most_likely": "1:0",
         "p_most_likely": 0.1282553649
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-04",
+      "home_team": "Colombia",
+      "away_team": "Ghana",
+      "home_score": 1,
+      "away_score": 0,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "1:0",
+      "prediction": {
+        "date": "2026-07-03",
+        "home_team": "Colombia",
+        "away_team": "Ghana",
+        "home_advantage": false,
+        "p_home": 0.8035694566,
+        "p_draw": 0.1356749017,
+        "p_away": 0.0607556417,
+        "most_likely": "2:0",
+        "p_most_likely": 0.1458584179
       },
       "prediction_correct": true,
       "is_upset": false
