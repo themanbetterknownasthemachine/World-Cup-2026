@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-04 08:33 UTC",
-  "played": 88,
-  "with_prediction": 85,
-  "correct": 55,
+  "updated": "2026-07-05 08:49 UTC",
+  "played": 90,
+  "with_prediction": 87,
+  "correct": 57,
   "results": [
     {
       "date": "2026-06-11",
@@ -2082,6 +2082,54 @@
         "p_away": 0.0607556417,
         "most_likely": "2:0",
         "p_most_likely": 0.1458584179
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-04",
+      "home_team": "Canada",
+      "away_team": "Morocco",
+      "home_score": 0,
+      "away_score": 3,
+      "neutral": false,
+      "tournament": "FIFA World Cup",
+      "winner": "away",
+      "score": "0:3",
+      "prediction": {
+        "date": "2026-07-04",
+        "home_team": "Canada",
+        "away_team": "Morocco",
+        "home_advantage": false,
+        "p_home": 0.2026561938,
+        "p_draw": 0.2483337246,
+        "p_away": 0.5490100816,
+        "most_likely": "0:1",
+        "p_most_likely": 0.1339410403
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-04",
+      "home_team": "Paraguay",
+      "away_team": "France",
+      "home_score": 0,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "away",
+      "score": "0:1",
+      "prediction": {
+        "date": "2026-07-04",
+        "home_team": "Paraguay",
+        "away_team": "France",
+        "home_advantage": false,
+        "p_home": 0.1214576818,
+        "p_draw": 0.1997545595,
+        "p_away": 0.6787877588,
+        "most_likely": "0:2",
+        "p_most_likely": 0.1336819568
       },
       "prediction_correct": true,
       "is_upset": false
