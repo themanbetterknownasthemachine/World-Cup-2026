@@ -1,150 +1,150 @@
 {
-  "updated": "2026-07-05 08:49 UTC",
-  "live_matches": 90,
+  "updated": "2026-07-06 10:15 UTC",
+  "live_matches": 92,
   "forecast": [
     {
-      "Team": "Argentina",
-      "Titel": 0.234,
-      "Finale": 0.3527,
-      "Halbfinale": 0.5654
+      "Team": "Spain",
+      "Titel": 0.2389,
+      "Finale": 0.3749,
+      "Halbfinale": 0.6284
     },
     {
-      "Team": "Spain",
-      "Titel": 0.2305,
-      "Finale": 0.3557,
-      "Halbfinale": 0.5854
+      "Team": "Argentina",
+      "Titel": 0.23,
+      "Finale": 0.3512,
+      "Halbfinale": 0.5417
     },
     {
       "Team": "France",
-      "Titel": 0.1557,
-      "Finale": 0.2974,
-      "Halbfinale": 0.4366
-    },
-    {
-      "Team": "Brazil",
-      "Titel": 0.0826,
-      "Finale": 0.1926,
-      "Halbfinale": 0.4065
+      "Titel": 0.162,
+      "Finale": 0.2908,
+      "Halbfinale": 0.4051
     },
     {
       "Team": "England",
-      "Titel": 0.0529,
-      "Finale": 0.1275,
-      "Halbfinale": 0.228
-    },
-    {
-      "Team": "Mexico",
-      "Titel": 0.0501,
-      "Finale": 0.1168,
-      "Halbfinale": 0.2759
+      "Titel": 0.1083,
+      "Finale": 0.2132,
+      "Halbfinale": 0.3143
     },
     {
       "Team": "Colombia",
-      "Titel": 0.0467,
-      "Finale": 0.1126,
-      "Halbfinale": 0.2011
+      "Titel": 0.0385,
+      "Finale": 0.0979,
+      "Halbfinale": 0.1633
     },
     {
-      "Team": "Switzerland",
-      "Titel": 0.0334,
-      "Finale": 0.0762,
-      "Halbfinale": 0.1932
+      "Team": "Brazil",
+      "Titel": 0.036,
+      "Finale": 0.1134,
+      "Halbfinale": 0.3042
     },
     {
       "Team": "Morocco",
-      "Titel": 0.0316,
-      "Finale": 0.0905,
-      "Halbfinale": 0.2572
+      "Titel": 0.0357,
+      "Finale": 0.1017,
+      "Halbfinale": 0.2986
+    },
+    {
+      "Team": "Switzerland",
+      "Titel": 0.0327,
+      "Finale": 0.0786,
+      "Halbfinale": 0.1875
     },
     {
       "Team": "Netherlands",
-      "Titel": 0.0234,
-      "Finale": 0.0725,
-      "Halbfinale": 0.2026
+      "Titel": 0.0252,
+      "Finale": 0.078,
+      "Halbfinale": 0.2288
     },
     {
       "Team": "Portugal",
-      "Titel": 0.0229,
-      "Finale": 0.0686,
-      "Halbfinale": 0.134
+      "Titel": 0.0225,
+      "Finale": 0.0634,
+      "Halbfinale": 0.117
     },
     {
-      "Team": "Germany",
-      "Titel": 0.0108,
-      "Finale": 0.0325,
-      "Halbfinale": 0.1025
-    },
-    {
-      "Team": "Belgium",
-      "Titel": 0.0094,
-      "Finale": 0.0316,
-      "Halbfinale": 0.102
+      "Team": "Mexico",
+      "Titel": 0.0187,
+      "Finale": 0.0663,
+      "Halbfinale": 0.1912
     },
     {
       "Team": "Norway",
-      "Titel": 0.0051,
-      "Finale": 0.0229,
-      "Halbfinale": 0.0656
+      "Titel": 0.0182,
+      "Finale": 0.0448,
+      "Halbfinale": 0.1114
     },
     {
-      "Team": "Japan",
-      "Titel": 0.0035,
-      "Finale": 0.0123,
-      "Halbfinale": 0.0487
+      "Team": "Germany",
+      "Titel": 0.0112,
+      "Finale": 0.0347,
+      "Halbfinale": 0.0992
+    },
+    {
+      "Team": "Belgium",
+      "Titel": 0.0106,
+      "Finale": 0.0361,
+      "Halbfinale": 0.1322
     },
     {
       "Team": "United States",
-      "Titel": 0.0032,
-      "Finale": 0.0129,
-      "Halbfinale": 0.0556
+      "Titel": 0.0038,
+      "Finale": 0.0164,
+      "Halbfinale": 0.0776
+    },
+    {
+      "Team": "Japan",
+      "Titel": 0.0034,
+      "Finale": 0.0124,
+      "Halbfinale": 0.0382
     },
     {
       "Team": "Egypt",
       "Titel": 0.0016,
-      "Finale": 0.0077,
-      "Halbfinale": 0.036
+      "Finale": 0.0083,
+      "Halbfinale": 0.0438
     },
     {
       "Team": "Ecuador",
-      "Titel": 0.0009,
-      "Finale": 0.0027,
-      "Halbfinale": 0.01
-    },
-    {
-      "Team": "Austria",
-      "Titel": 0.0007,
-      "Finale": 0.0067,
-      "Halbfinale": 0.0304
+      "Titel": 0.0006,
+      "Finale": 0.0043,
+      "Halbfinale": 0.013
     },
     {
       "Team": "Ivory Coast",
-      "Titel": 0.0006,
-      "Finale": 0.0033,
-      "Halbfinale": 0.024
-    },
-    {
-      "Team": "Paraguay",
-      "Titel": 0.0002,
-      "Finale": 0.0025,
-      "Halbfinale": 0.0142
-    },
-    {
-      "Team": "Sweden",
-      "Titel": 0.0001,
-      "Finale": 0.001,
-      "Halbfinale": 0.009
+      "Titel": 0.0005,
+      "Finale": 0.0024,
+      "Halbfinale": 0.0288
     },
     {
       "Team": "Algeria",
-      "Titel": 0.0001,
-      "Finale": 0.0007,
-      "Halbfinale": 0.0131
+      "Titel": 0.0004,
+      "Finale": 0.0016,
+      "Halbfinale": 0.0172
     },
     {
-      "Team": "Haiti",
-      "Titel": 0.0,
-      "Finale": 0.0,
-      "Halbfinale": 0.0
+      "Team": "Austria",
+      "Titel": 0.0004,
+      "Finale": 0.0055,
+      "Halbfinale": 0.0342
+    },
+    {
+      "Team": "Sweden",
+      "Titel": 0.0003,
+      "Finale": 0.0016,
+      "Halbfinale": 0.0081
+    },
+    {
+      "Team": "Paraguay",
+      "Titel": 0.0003,
+      "Finale": 0.0022,
+      "Halbfinale": 0.0116
+    },
+    {
+      "Team": "South Africa",
+      "Titel": 0.0002,
+      "Finale": 0.0003,
+      "Halbfinale": 0.0023
     },
     {
       "Team": "Czech Republic",
@@ -153,10 +153,10 @@
       "Halbfinale": 0.0
     },
     {
-      "Team": "South Africa",
+      "Team": "Haiti",
       "Titel": 0.0,
-      "Finale": 0.0001,
-      "Halbfinale": 0.0014
+      "Finale": 0.0,
+      "Halbfinale": 0.0
     },
     {
       "Team": "Australia",
@@ -180,7 +180,7 @@
       "Team": "Bosnia and Herzegovina",
       "Titel": 0.0,
       "Finale": 0.0,
-      "Halbfinale": 0.0007
+      "Halbfinale": 0.001
     },
     {
       "Team": "Canada",
@@ -282,7 +282,7 @@
       "Team": "Ghana",
       "Titel": 0.0,
       "Finale": 0.0,
-      "Halbfinale": 0.0006
+      "Halbfinale": 0.001
     },
     {
       "Team": "Panama",
