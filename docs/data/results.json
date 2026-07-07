@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-06 10:15 UTC",
-  "played": 92,
-  "with_prediction": 89,
-  "correct": 57,
+  "updated": "2026-07-07 09:37 UTC",
+  "played": 94,
+  "with_prediction": 91,
+  "correct": 59,
   "results": [
     {
       "date": "2026-06-11",
@@ -2180,6 +2180,54 @@
         "p_most_likely": 0.1185208262
       },
       "prediction_correct": false,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-06",
+      "home_team": "Portugal",
+      "away_team": "Spain",
+      "home_score": 0,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "away",
+      "score": "0:1",
+      "prediction": {
+        "date": "2026-07-06",
+        "home_team": "Portugal",
+        "away_team": "Spain",
+        "home_advantage": false,
+        "p_home": 0.2098745555,
+        "p_draw": 0.2512753711,
+        "p_away": 0.5388500734,
+        "most_likely": "0:1",
+        "p_most_likely": 0.1333378343
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-07",
+      "home_team": "United States",
+      "away_team": "Belgium",
+      "home_score": 1,
+      "away_score": 4,
+      "neutral": false,
+      "tournament": "FIFA World Cup",
+      "winner": "away",
+      "score": "1:4",
+      "prediction": {
+        "date": "2026-07-06",
+        "home_team": "United States",
+        "away_team": "Belgium",
+        "home_advantage": true,
+        "p_home": 0.3444700101,
+        "p_draw": 0.253859946,
+        "p_away": 0.4016700439,
+        "most_likely": "1:1",
+        "p_most_likely": 0.1199843231
+      },
+      "prediction_correct": true,
       "is_upset": false
     }
   ]
