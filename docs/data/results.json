@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-07 09:37 UTC",
-  "played": 94,
-  "with_prediction": 91,
-  "correct": 59,
+  "updated": "2026-07-08 08:24 UTC",
+  "played": 96,
+  "with_prediction": 93,
+  "correct": 60,
   "results": [
     {
       "date": "2026-06-11",
@@ -2228,6 +2228,54 @@
         "p_most_likely": 0.1199843231
       },
       "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-07",
+      "home_team": "Argentina",
+      "away_team": "Egypt",
+      "home_score": 3,
+      "away_score": 2,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "3:2",
+      "prediction": {
+        "date": "2026-07-06",
+        "home_team": "Argentina",
+        "away_team": "Egypt",
+        "home_advantage": false,
+        "p_home": 0.7445908979,
+        "p_draw": 0.1679694217,
+        "p_away": 0.0874396804,
+        "most_likely": "2:0",
+        "p_most_likely": 0.1424974269
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-07",
+      "home_team": "Switzerland",
+      "away_team": "Colombia",
+      "home_score": 0,
+      "away_score": 0,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "draw",
+      "score": "0:0",
+      "prediction": {
+        "date": "2026-07-06",
+        "home_team": "Switzerland",
+        "away_team": "Colombia",
+        "home_advantage": false,
+        "p_home": 0.3076313406,
+        "p_draw": 0.2752052122,
+        "p_away": 0.4171634472,
+        "most_likely": "1:1",
+        "p_most_likely": 0.1297168661
+      },
+      "prediction_correct": false,
       "is_upset": false
     }
   ]
