@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-09 09:35 UTC",
-  "played": 96,
-  "with_prediction": 93,
-  "correct": 60,
+  "updated": "2026-07-10 09:31 UTC",
+  "played": 97,
+  "with_prediction": 94,
+  "correct": 61,
   "results": [
     {
       "date": "2026-06-11",
@@ -2276,6 +2276,30 @@
         "p_most_likely": 0.1297168661
       },
       "prediction_correct": false,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-09",
+      "home_team": "France",
+      "away_team": "Morocco",
+      "home_score": 2,
+      "away_score": 0,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "2:0",
+      "prediction": {
+        "date": "2026-07-09",
+        "home_team": "France",
+        "away_team": "Morocco",
+        "home_advantage": false,
+        "p_home": 0.5287508583,
+        "p_draw": 0.2540654962,
+        "p_away": 0.2171836455,
+        "most_likely": "1:0",
+        "p_most_likely": 0.132655148
+      },
+      "prediction_correct": true,
       "is_upset": false
     }
   ]
