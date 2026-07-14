@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-11 07:51 UTC",
-  "played": 98,
-  "with_prediction": 95,
-  "correct": 62,
+  "updated": "2026-07-14 07:59 UTC",
+  "played": 100,
+  "with_prediction": 97,
+  "correct": 64,
   "results": [
     {
       "date": "2026-06-11",
@@ -2322,6 +2322,54 @@
         "p_away": 0.2199442829,
         "most_likely": "1:0",
         "p_most_likely": 0.1323796273
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-11",
+      "home_team": "Norway",
+      "away_team": "England",
+      "home_score": 1,
+      "away_score": 2,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "away",
+      "score": "1:2",
+      "prediction": {
+        "date": "2026-07-11",
+        "home_team": "Norway",
+        "away_team": "England",
+        "home_advantage": false,
+        "p_home": 0.2335432732,
+        "p_draw": 0.2596578557,
+        "p_away": 0.5067988711,
+        "most_likely": "0:1",
+        "p_most_likely": 0.1308924575
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-12",
+      "home_team": "Argentina",
+      "away_team": "Switzerland",
+      "home_score": 3,
+      "away_score": 1,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "home",
+      "score": "3:1",
+      "prediction": {
+        "date": "2026-07-11",
+        "home_team": "Argentina",
+        "away_team": "Switzerland",
+        "home_advantage": false,
+        "p_home": 0.5633464572,
+        "p_draw": 0.2439575325,
+        "p_away": 0.1926960103,
+        "most_likely": "1:0",
+        "p_most_likely": 0.1346465297
       },
       "prediction_correct": true,
       "is_upset": false
