@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-14 07:59 UTC",
-  "played": 100,
-  "with_prediction": 97,
-  "correct": 64,
+  "updated": "2026-07-15 08:05 UTC",
+  "played": 101,
+  "with_prediction": 98,
+  "correct": 65,
   "results": [
     {
       "date": "2026-06-11",
@@ -2370,6 +2370,30 @@
         "p_away": 0.1926960103,
         "most_likely": "1:0",
         "p_most_likely": 0.1346465297
+      },
+      "prediction_correct": true,
+      "is_upset": false
+    },
+    {
+      "date": "2026-07-14",
+      "home_team": "France",
+      "away_team": "Spain",
+      "home_score": 0,
+      "away_score": 2,
+      "neutral": true,
+      "tournament": "FIFA World Cup",
+      "winner": "away",
+      "score": "0:2",
+      "prediction": {
+        "date": "2026-07-14",
+        "home_team": "France",
+        "away_team": "Spain",
+        "home_advantage": false,
+        "p_home": 0.3298396533,
+        "p_draw": 0.2771827459,
+        "p_away": 0.3929776008,
+        "most_likely": "1:1",
+        "p_most_likely": 0.1306489686
       },
       "prediction_correct": true,
       "is_upset": false
