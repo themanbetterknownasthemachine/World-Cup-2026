@@ -1,9 +1,10 @@
 # WM 2026 — Pro-Spiel-Prognose
 
-Stand: 2026-07-15 08:05 UTC · noch offene Spiele: 1
+Stand: 2026-07-16 08:08 UTC · noch offene Spiele: 2
 
 Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 
 | Datum | Spiel | 1 | X | 2 | Wahrsch. Resultat | P |
 |---|---|---:|---:|---:|:--:|---:|
-| 2026-07-15 | England vs Argentina | 27% | 27% | 46% | 1:1 | 12.7% |
+| 2026-07-18 | France vs England | 38% | 28% | 35% | 1:1 | 13.1% |
+| 2026-07-19 | Spain vs Argentina | 35% | 28% | 37% | 1:1 | 13.1% |
