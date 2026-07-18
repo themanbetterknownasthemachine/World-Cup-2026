@@ -1,6 +1,6 @@
 # WM 2026 — Pro-Spiel-Prognose
 
-Stand: 2026-07-17 08:06 UTC · noch offene Spiele: 2
+Stand: 2026-07-18 07:45 UTC · noch offene Spiele: 2
 
 Heimspiele eines Gastgebers (Mexico/USA/Canada) sind mit ⌂ markiert.
 
