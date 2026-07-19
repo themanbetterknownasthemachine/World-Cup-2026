@@ -1,28 +1,17 @@
 {
-  "updated": "2026-07-18 07:45 UTC",
-  "live_matches": 102,
+  "updated": "2026-07-19 08:12 UTC",
+  "live_matches": 103,
   "matches": [
-    {
-      "date": "2026-07-18",
-      "home_team": "France",
-      "away_team": "England",
-      "home_advantage": false,
-      "p_home": 0.3770622544383413,
-      "p_draw": 0.2778716316149268,
-      "p_away": 0.34506611394673214,
-      "most_likely": "1:1",
-      "p_most_likely": 0.13098082065607713
-    },
     {
       "date": "2026-07-19",
       "home_team": "Spain",
       "away_team": "Argentina",
       "home_advantage": false,
-      "p_home": 0.35029114719534726,
-      "p_draw": 0.27801106672137527,
-      "p_away": 0.37169778608327736,
+      "p_home": 0.35029117241082763,
+      "p_draw": 0.2780110672593974,
+      "p_away": 0.3716977603297752,
       "most_likely": "1:1",
-      "p_most_likely": 0.1310465464178785
+      "p_most_likely": 0.1310465466714868
     }
   ]
 }
